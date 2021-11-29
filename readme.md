@@ -36,6 +36,10 @@ Start the local development server
 
     php artisan serve
 
+Install all the dependencies using npm
+
+    npm install
+
 You can now access the server at http://localhost:8000 or http://localhost/humanitas/public/
  
 # Authentication
