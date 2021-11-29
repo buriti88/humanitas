@@ -1,4 +1,4 @@
-# [Laravel Example App - Serempre]
+# [Laravel App - Humanitas]
 
 # Getting started
 
@@ -6,11 +6,11 @@
 
 Clone the repository
 
-    git clone https://github.com/buriti88/serempre.git
+    git clone https://github.com/buriti88/humanitas.git
 
 Switch to the repo folder
 
-    cd serempre
+    cd humanitas
 
 Install all the dependencies using composer
 
@@ -18,7 +18,7 @@ Install all the dependencies using composer
 
 Create a database in mysql
 
-    CREATE DATABASE serempre CHARACTER SET utf8 COLLATE utf8_spanish_ci;
+    CREATE DATABASE humanitas CHARACTER SET utf8 COLLATE utf8_spanish_ci;
 
 Copy the example env file and make the required configuration changes in the .env file
 
@@ -36,10 +36,8 @@ Start the local development server
 
     php artisan serve
 
-You can now access the server at http://localhost:8000 or http://localhost/serempre/public/
+You can now access the server at http://localhost:8000 or http://localhost/humanitas/public/
  
 # Authentication
  
 The admin user is: admin and password: Admin$%
-
-The search user is: mburitica and password: Manuel$%
