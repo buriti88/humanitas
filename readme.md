@@ -32,15 +32,11 @@ Run the database migrations (**Set the database connection in .env before migrat
 
     php artisan migrate --seed
 
-Start the local development server
-
-    php artisan serve
-
 Install all the dependencies using npm
 
     npm install
 
-You can now access the server at http://localhost:8000 or http://localhost/humanitas/public/
+You can now access the server at http://localhost/humanitas/public/
  
 # Authentication
  
