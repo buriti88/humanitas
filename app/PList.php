@@ -112,7 +112,6 @@ class PList extends Model
      */
     public function setListNameAttribute($value)
     {
-        dd('jaja');
         $this->attributes['list'] = $value;
     }
 }
