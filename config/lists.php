@@ -25,7 +25,6 @@ return [
     'default' => [
         'titles' => 
         [
-
             'Administración',
             'Auxiliar Enfermería',
             'Auxiliar Laboratorio',
