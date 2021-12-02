@@ -21,7 +21,37 @@ class Employee extends Model
 
     protected $fillable = [
         'title',
-        'name',
+        'habeas_data',
+        'expedition_date',
+        'gender',
+        'telephone',
+        'address',
+        'municipality',
+        'neighborhood',
+        'type_housing',
+        'stratum',
+        'email',
+        'rh',
+        'marital_status',
+        'number_children',
+        'function_manual',
+        'certificate_degrees',
+        'title_verification',
+        'resolution_rethus',
+        'professional_card',
+        'advan _life_support',
+        'certific_victims_sexual_violence',
+        'court_ ethics_certific',
+        'card_ protect_validity',
+        'civil liability policy',
+        'health',
+        'pension',
+        'arl',
+        'account_number',
+        'date _admission',
+        'concept_contract',
+        'date_ end',
+        'observations',
         'status',
     ];
 
@@ -56,5 +86,3 @@ class Employee extends Model
         }
 
         return $builder->orderBy('name', 'ASC');
-    }
-}
