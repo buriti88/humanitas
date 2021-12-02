@@ -23,16 +23,24 @@ return [
         'contract_types' => 'Concepto del Contrato',
     ],
     'default' => [
-        'titles' => [
-            'Médicos',
-            'Enfermería',
-            'Odontología',
-            'Auxiliar odontología',
-            'Laboratorio',
+        'titles' => 
+        [
+
+            'Administración',
+            'Auxiliar Enfermería',
+            'Auxiliar Laboratorio',
+            'Auxiliar Odontología',
+            'Auxiliar Punto de servicios',
+            'Auxiliar Radiología',
+            'Bacteriología',
             'Especialistas',
-            'Administrativo',
+            'Jefe Enfermería',
+            'Médicos',
+            'Odontología',
             'Orientadores',
-            'Auxiliar punto de servicio',
+            'Practicante',
+            'Radiólogo',
+            'Servicios Generales',
         ],
         'genders' => [
             'Femenino',
