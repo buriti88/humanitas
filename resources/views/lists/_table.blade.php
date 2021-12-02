@@ -3,7 +3,6 @@
         <tr>
             <th class="text-center">@lang('lists.list')</th>
             <th class="text-center">@lang('lists.option')</th>
-            <th class="text-center">@lang('lists.option_key')</th>
             @permission(['edit_lists', 'all_lists'])
             <th class="text-center">@lang('lists.status')</th>
             <th class="text-center">@lang('base_lang.edit')</th>
@@ -15,7 +14,6 @@
     <tr role="row" class="odd">
         <td>{{$lists[$o->list] ?? ''}}</td>
         <td>{{$o->option}}</td>
-        <td>{{$o->option_key}}</td>
         @permission(['edit_lists', 'all_lists'])
         <td class="text-center">
             @if(!isset($protected[$o->list]) || !isset($protected[$o->list][$o->option_key]))
