@@ -86,3 +86,5 @@ class Employee extends Model
         }
 
         return $builder->orderBy('name', 'ASC');
+    }
+}
