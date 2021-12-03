@@ -30,7 +30,7 @@ return [
     'title_verification' => 'Verificación de Título',
     'resolution_rethus' => 'Resolución o Rethus',
     'professional_card' => 'Tarjeta Profesional',
-    'advan_life_card' => 'fecha_vencimiento_soporte_vital',
+    'advan_life_card' => 'Fecha Vencimiento Soporte Vital',
     'certific_victims_sexual_violence' => 'Certificado Atención VÍctimas de Violencia Sexual',
     'court_ethics_certific' => 'Certificado Tribunal de Ética',
     'card_protect_validity' => 'Vigencia Carnet Radio Protección',
