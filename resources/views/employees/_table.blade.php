@@ -1,6 +1,7 @@
 <table class="table table-sm table-bordered table-striped">
     <thead>
         <tr>
+            <th class="text-center vertical-center">@lang('base_lang.detail')</th>
             <th class="text-center vertical-center">@lang('employees.title_id')</th>
             <th class="text-center vertical-center">@lang('employees.name')</th>
 
@@ -16,6 +17,12 @@
     </thead>
     @forelse($employees as $employee)
     <tr>
+        <td class="text-center">
+            <a href="{{ url("/insurances/{$insurance->id}") }}" class="btn btn-default btn-xs"
+                title="@lang('base_lang.detail')">
+                <i class="fa fa-fw fa-file-alt icon_color"></i>
+            </a>
+        </td>
         <td>{!! ($employee->title->option ?? '') !!}</td>
         <td>{!! ($employee->name) !!}</td>
 
