@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\PList;
 use App\Traits\CustomAttributesTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -86,5 +87,14 @@ class Employee extends Model
         }
 
         return $builder->orderBy('name', 'ASC');
+    }
+
+    public static function getArrayList()
+    {
+        $lists = [
+            'titles' => PList::status()->Options('titles')->get(),
+        ];
+
+        return $lists;
     }
 }

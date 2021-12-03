@@ -23,8 +23,7 @@ return [
         'contract_types' => 'Concepto del Contrato',
     ],
     'default' => [
-        'titles' => 
-        [
+        'titles' => [
             'Administración',
             'Auxiliar Enfermería',
             'Auxiliar Laboratorio',
