@@ -114,7 +114,7 @@
                         @if(App\Http\Validations\Validation::permissionsUser('employees'))
                         <li class="nav-item">
                             <a href="{{ route('employees.index') }}" class="nav-link">
-                                <i class="nav-icon fas fa-newspaper"></i>
+                                <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     @lang('base_lang.employees')
                                 </p>
