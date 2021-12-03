@@ -110,6 +110,19 @@
                         </li>
                         @endif
 
+                        @if(App\Http\Validations\Validation::validate('employees'))
+                        @if(App\Http\Validations\Validation::permissionsUser('employees'))
+                        <li class="nav-item">
+                            <a href="{{ route('employees.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-newspaper"></i>
+                                <p>
+                                    @lang('base_lang.employees')
+                                </p>
+                            </a>
+                        </li>
+                        @endif
+                        @endif
+
                         @if(\Illuminate\Support\Facades\Auth::user()->id === 1)
                         <li class="nav-item">
                             <a href="{{ url('log-viewer/logs') }}" class="nav-link" target="_blank">
