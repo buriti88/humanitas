@@ -32,7 +32,7 @@ class EmployeeController extends Controller
         return view('employees.index', [
             'search' => $search,
             'employees' => $employees,
-        ] + Employee::getArrayList());
+        ]);
     }
 
     /**
@@ -44,7 +44,7 @@ class EmployeeController extends Controller
     {
         return view("employees.create", [
             'employees' => $employees,
-        ]);
+        ] + Employee::getArrayList());
     }
 
     /**
@@ -77,7 +77,11 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $employees = Employee::findOrFail($id);
+
+        return view("employees.edit", [
+            'employees' => $employees,
+        ]);
     }
 
     /**
