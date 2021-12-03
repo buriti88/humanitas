@@ -9,10 +9,12 @@ return [
 
     'new_employee' => 'Nuevo Empleado',
 
+    'select_title' => 'Seleccionar cargo',
+
     //Tags
     'title_id' => 'Cargo',
     'name' => 'Nombre',
-    'habeas_data' => 'Hebeas Data',
+    'habeas_data' => 'Habeas Data',
     'identification_card' => 'Cedula',
     'expedition_date' => 'Fecha de Expedicion',
     'date_birth' => 'Fecha de Nacimiento',
