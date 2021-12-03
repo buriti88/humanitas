@@ -46,6 +46,8 @@ abstract class Validation
         switch ($parameter) {
             case 'master':
                 return Validation::permissionsUser('lists');
+            case 'employees':
+                return Validation::permissionsUser('employees');
             default:
                 return false;
         }

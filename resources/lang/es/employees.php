@@ -7,6 +7,8 @@ return [
     'deleted' => 'El Empleado :name ha sido eliminado con éxito.',
     'failed' => 'Error al :action del empleado',
 
+    'new_employee' => 'Nuevo Empleado',
+
     //Tags
     'title_id' => 'Cargo',
     'name' => 'Nombre',
