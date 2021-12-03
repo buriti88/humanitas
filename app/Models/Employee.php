@@ -98,6 +98,17 @@ class Employee extends Model
     {
         $lists = [
             'titles' => PList::status()->Options('titles')->get(),
+            'genders' => PList::status()->Options('genders')->get(),
+            'municipalities' => PList::status()->Options('municipalities')->get(),
+            'types_of_housing' => PList::status()->Options('types_of_housing')->get(),
+            'stratums' => PList::status()->Options('stratums')->get(),
+            'maritals_status' => PList::status()->Options('maritals_status')->get(),
+            'health' => PList::status()->Options('health')->get(),
+            'pension' => PList::status()->Options('pension')->get(),
+            'arl' => PList::status()->Options('arl')->get(),
+            'account_types' => PList::status()->Options('account_types')->get(),
+            'banks' => PList::status()->Options('banks')->get(),
+            'contract_types' => PList::status()->Options('contract_types')->get(),
         ];
 
         return $lists;
@@ -105,6 +116,61 @@ class Employee extends Model
 
     public function title()
     {
-        return $this->belongsTo(Plist::class, 'category_id');
+        return $this->belongsTo(Plist::class, 'title_id');
+    }
+
+    public function gender()
+    {
+        return $this->belongsTo(Plist::class, 'gender_id');
+    }
+
+    public function municipality()
+    {
+        return $this->belongsTo(Plist::class, 'municipality_id');
+    }
+    
+    public function type_housing()
+    {
+        return $this->belongsTo(Plist::class, 'type_housing_id');
+    }
+
+    public function stratum()
+    {
+        return $this->belongsTo(Plist::class, 'stratum_id');
+    }
+
+    public function marital_status()
+    {
+        return $this->belongsTo(Plist::class, 'marital_status_id');
+    }
+
+    public function health()
+    {
+        return $this->belongsTo(Plist::class, 'health_id');
+    }
+
+    public function pension()
+    {
+        return $this->belongsTo(Plist::class, 'pension_id');
+    }
+
+    public function arl()
+    {
+        return $this->belongsTo(Plist::class, 'arl_id');
+    }
+
+    public function account_type()
+    {
+        return $this->belongsTo(Plist::class, 'account_type_id');
+    }
+
+    public function bank()
+    {
+        return $this->belongsTo(Plist::class, 'bank_id');
+    }
+
+    public function contract_type()
+    {
+        return $this->belongsTo(Plist::class, 'contract_type_id');
     }
 }
