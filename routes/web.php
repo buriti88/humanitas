@@ -60,5 +60,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::group(['middleware' => [Validation::permissionsRoute('lists')]], function () {
             Route::resource('lists', 'ListController');
         });
+
+        // Employee Routes...
+        Route::group(['middleware' => [Validation::permissionsRoute('employees')]], function () {
+            Route::resource('employees', 'EmployeeController');
+        });
     });
 });
