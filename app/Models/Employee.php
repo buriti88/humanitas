@@ -97,4 +97,9 @@ class Employee extends Model
 
         return $lists;
     }
+
+    public function title()
+    {
+        return $this->belongsTo(Plist::class, 'category_id');
+    }
 }
