@@ -3,7 +3,7 @@
 @section('title', __('base_lang.employees'))
 
 @section('title_page')
-<i class="fas fa-wifi"></i>&nbsp;@lang('base_lang.employees')
+<i class="fas fa-user"></i>&nbsp;@lang('base_lang.employees')
 @endsection
 
 @section('content_page')

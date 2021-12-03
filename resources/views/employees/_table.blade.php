@@ -1,7 +1,7 @@
 <table class="table table-sm table-bordered table-striped">
     <thead>
         <tr>
-            <th class="text-center vertical-center">@lang('employees.title')</th>
+            <th class="text-center vertical-center">@lang('employees.title_id')</th>
             <th class="text-center vertical-center">@lang('employees.name')</th>
 
             @permission(['edit_employees', 'all_employees'])
@@ -21,7 +21,7 @@
 
         @permission(['edit_employees', 'all_employees'])
         <td class="text-center">
-            <form method="POST" action="{{url('/admin/employees/' . $employee->id)}}">
+            <form method="POST" action="{{url('/employees/' . $employee->id)}}">
                 @method('put')
                 @csrf
                 <input type="hidden" name="status" value="{{$employee->status ? 0 : 1}}" />
@@ -33,7 +33,7 @@
         </td>
         <td class="text-center">
             <div class="section_edit">
-                <a href="{{url('/admin/employees/' . $employee->id . '/edit')}}" class="btn btn-sm  btn-default btn-xs"
+                <a href="{{url('/employees/' . $employee->id . '/edit')}}" class="btn btn-sm  btn-default btn-xs"
                     title="@lang('base_lang.edit')"><i class="fa fa-fw fa-edit icon_color"></i></a>
             </div>
         </td>
@@ -41,7 +41,7 @@
 
         @permission(['delete_employees', 'all_employees'])
         <td class="text-center">
-            <form class="form-horizontal" role="form" method="POST" action="{{url('/admin/employees/' . $employee->id)}}">
+            <form class="form-horizontal" role="form" method="POST" action="{{url('/employees/' . $employee->id)}}">
                 @method('delete')
                 @csrf
                 <button type="button" class="btn btn-sm  btn-default btn-xs btn-delete"
