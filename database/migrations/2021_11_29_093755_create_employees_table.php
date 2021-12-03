@@ -24,13 +24,13 @@ class CreateEmployeesTable extends Migration
             $table->unsignedBigInteger('gender_id')->nullable();
             $table->string('telephone')->nullable();
             $table->string('address')->nullable();
-            $table->string('municipality')->nullable();
+            $table->unsignedBigInteger('municipality_id')->nullable();
             $table->string('neighborhood')->nullable();
-            $table->string('type_housing')->nullable();
-            $table->string('stratum')->nullable();
+            $table->unsignedBigInteger('type_housing_id')->nullable();
+            $table->unsignedBigInteger('stratum_id')->nullable();
             $table->string('email')->nullable();
             $table->string('rh')->nullable();
-            $table->string('marital_status')->nullable();
+            $table->unsignedBigInteger('marital_status_id')->nullable();
             $table->string('number_children')->nullable();
             $table->string('function_manual')->nullable();
             $table->string('certificate_degrees')->nullable();
@@ -41,21 +41,33 @@ class CreateEmployeesTable extends Migration
             $table->string('certific_victims_sexual_violence')->nullable();
             $table->string('court_ethics_certific')->nullable();
             $table->string('card_protect_validity')->nullable();
-            $table->string('civil_liability policy')->nullable();
+            $table->string('civil_liability_policy')->nullable();
             $table->string('occupational_exam')->nullable();
-            $table->string('health')->nullable();
-            $table->string('pension')->nullable();
-            $table->string('arl')->nullable();
+            $table->unsignedBigInteger('health_id')->nullable();
+            $table->unsignedBigInteger('pension_id')->nullable();
+            $table->unsignedBigInteger('arl_id')->nullable();
             $table->string('account_number')->nullable();
+            $table->unsignedBigInteger('account_type_id')->nullable();
+            $table->unsignedBigInteger('bank_id')->nullable();
             $table->string('date_admission')->nullable();
-            $table->string('concept_contract')->nullable();
+            $table->unsignedBigInteger('contract_type_id')->nullable();
             $table->string('date_end')->nullable();
-            $table->string('observations')->nullable();
+            $table->text('observations')->nullable();
             $table->boolean('status')->default(1)->nullable();
             $table->timestamps();
 
             $table->foreign('title_id')->references('id')->on('lists');
             $table->foreign('gender_id')->references('id')->on('lists');
+            $table->foreign('municipality_id')->references('id')->on('lists');
+            $table->foreign('type_housing_id')->references('id')->on('lists');
+            $table->foreign('stratum_id')->references('id')->on('lists');
+            $table->foreign('marital_status_id')->references('id')->on('lists');
+            $table->foreign('health_id')->references('id')->on('lists');
+            $table->foreign('pension_id')->references('id')->on('lists');
+            $table->foreign('arl_id')->references('id')->on('lists');
+            $table->foreign('account_type_id')->references('id')->on('lists');
+            $table->foreign('bank_id')->references('id')->on('lists');
+            $table->foreign('contract_type_id')->references('id')->on('lists');
         });
     }
 
