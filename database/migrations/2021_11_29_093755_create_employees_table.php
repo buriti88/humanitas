@@ -68,6 +68,9 @@ class CreateEmployeesTable extends Migration
             $table->foreign('account_type_id')->references('id')->on('lists');
             $table->foreign('bank_id')->references('id')->on('lists');
             $table->foreign('contract_type_id')->references('id')->on('lists');
+            $table->foreign('rh_id')->references('id')->on('lists');
+
+
         });
     }
 
