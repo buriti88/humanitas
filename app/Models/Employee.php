@@ -35,7 +35,7 @@ class Employee extends Model
         'type_housing_id',
         'stratum_id',
         'email',
-        'rh',
+        'rh_id',
         'marital_status_id',
         'number_children',
         'function_manual',
@@ -109,6 +109,7 @@ class Employee extends Model
             'account_types' => PList::status()->Options('account_types')->get(),
             'banks' => PList::status()->Options('banks')->get(),
             'contract_types' => PList::status()->Options('contract_types')->get(),
+            'rh' => PList::status()->Options('rh')->get(),
         ];
 
         return $lists;
@@ -172,5 +173,10 @@ class Employee extends Model
     public function contract_type()
     {
         return $this->belongsTo(Plist::class, 'contract_type_id');
+    }
+
+    public function rh()
+    {
+        return $this->belongsTo(Plist::class, 'rh_id');
     }
 }
