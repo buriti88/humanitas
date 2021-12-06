@@ -21,6 +21,8 @@ return [
         'account_types' => 'Tipos de Cuenta',
         'banks' => 'Bancos',
         'contract_types' => 'Concepto del Contrato',
+        'rh' => 'Rh',
+
     ],
     'default' => [
         'titles' => [
@@ -107,6 +109,17 @@ return [
             'Término fijo',
             'Término Indefinido',
         ],
+        'rh' => [
+            'A+',
+            'O+',
+            'B+',
+            'AB+',
+            'A-',
+            'O-',
+            'B-',
+            'AB-',
+        ],
+
     ],
 
     'protected' => []
