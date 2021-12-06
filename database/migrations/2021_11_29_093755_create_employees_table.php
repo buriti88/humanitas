@@ -29,7 +29,7 @@ class CreateEmployeesTable extends Migration
             $table->unsignedBigInteger('type_housing_id')->nullable();
             $table->unsignedBigInteger('stratum_id')->nullable();
             $table->string('email')->nullable();
-            $table->string('rh')->nullable();
+            $table->foreach('rh')->nullable();
             $table->unsignedBigInteger('marital_status_id')->nullable();
             $table->string('number_children')->nullable();
             $table->string('function_manual')->nullable();
