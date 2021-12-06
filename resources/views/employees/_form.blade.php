@@ -30,8 +30,8 @@
                         name="title_id" id="title_id">
                         <option value="">@lang('employees.select_title')</option>
                         @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('title_id', $employees->title_id ?? '') ? 'selected' : '' }}>
+                        <option value="{{$title->id}}" {{ $title->id==old('title_id', $employees->title_id ?? '') ?
+                            'selected' : '' }}>
                             {{ $title->option }}
                         </option>
                         @endforeach
@@ -50,8 +50,10 @@
                     <select class="form-control-sm select2 {{ $errors->has('habeas_data') ? 'is-invalid' : '' }} w-100"
                         name="habeas_data" id="habeas_data">
                         <option value="">@lang('employees.habeas_data')</option>
-                        <option value="1" {{old('habeas_data', $employee->habeas_data ?? '') ? 'selected' : ''}}>Sí</option>
-                        <option value="0" {{old('habeas_data', $employee->habeas_data ?? '') ? 'selected' : ''}}>No</option>
+                        <option value="1" {{old('habeas_data', $employee->habeas_data ?? '') ? 'selected' : ''}}>Sí
+                        </option>
+                        <option value="0" {{old('habeas_data', $employee->habeas_data ?? '') ? 'selected' : ''}}>No
+                        </option>
                     </select>
                     @if($errors->has('habeas_data'))
                     <span class="invalid-feedback">
@@ -67,8 +69,10 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-id-card"></i></div>
                     </div>
-                    <input id="identification_card" type="text" class="form-control {{ $errors->has('identification_card') ? 'is-invalid' : '' }}"
-                        name="identification_card" value="{{ old('identification_card', $employees->identification_card ?? '') }}"
+                    <input id="identification_card" type="text"
+                        class="form-control {{ $errors->has('identification_card') ? 'is-invalid' : '' }}"
+                        name="identification_card"
+                        value="{{ old('identification_card', $employees->identification_card ?? '') }}"
                         placeholder="@lang('employees.identification_card')">
                     @if($errors->has('identification_card'))
                     <span class="invalid-feedback">
@@ -77,7 +81,616 @@
                     @endif
                 </div>
             </div>
-            
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.expedition_date')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="expedition_date" type="text" class="form-control {{ $errors->has('expedition_date') ? 'is-invalid' : '' }}"
+                        expedition_date="expedition_date" value="{{ old('expedition_date', $employees->expedition_date ?? '') }}"
+                        placeholder="@lang('employees.expedition_date')">
+                    @if($errors->has('expedition_date'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('expedition_date') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.genders_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('genders_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('genders_id') ? 'is-invalid' : '' }} w-100"
+                        name="genders_id" id="genders_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('genders_id', $employees->genders_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('genders_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('genders_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.telephone')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="telephone" type="text" class="form-control {{ $errors->has('telephone') ? 'is-invalid' : '' }}"
+                        telephone="telephone" value="{{ old('telephone', $employees->telephone ?? '') }}"
+                        placeholder="@lang('employees.telephone')">
+                    @if($errors->has('telephone'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('telephone') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.address')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="address" type="text" class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}"
+                        address="address" value="{{ old('address', $employees->address ?? '') }}"
+                        placeholder="@lang('employees.address')">
+                    @if($errors->has('address'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('address') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.municipality_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('municipality_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('municipality_id') ? 'is-invalid' : '' }} w-100"
+                        name="municipality_id" id="municipality_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('municipality_id', $employees->municipality_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('municipality_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('municipality_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.neighborhood')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="neighborhood" type="text" class="form-control {{ $errors->has('neighborhood') ? 'is-invalid' : '' }}"
+                        neighborhood="neighborhood" value="{{ old('neighborhood', $employees->neighborhood ?? '') }}"
+                        placeholder="@lang('employees.neighborhood')">
+                    @if($errors->has('neighborhood'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('neighborhood') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.type_housing_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('type_housing_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('type_housing_id') ? 'is-invalid' : '' }} w-100"
+                        name="type_housing_id" id="type_housing_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('type_housing_id', $employees->type_housing_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('type_housing_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('type_housing_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.stratums_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('stratums_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('stratums_id') ? 'is-invalid' : '' }} w-100"
+                        name="stratums_id" id="stratums_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('stratums_id', $employees->stratums_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('stratums_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('stratums_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.email')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="email" type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
+                        email="email" value="{{ old('email', $employees->email ?? '') }}"
+                        placeholder="@lang('employees.email')">
+                    @if($errors->has('email'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.rh_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('rh_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('rh_id') ? 'is-invalid' : '' }} w-100"
+                        name="rh_id" id="rh_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('rh_id', $employees->rh_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('rh_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('rh_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.maritals_status_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('maritals_status_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('maritals_status_id') ? 'is-invalid' : '' }} w-100"
+                        name="maritals_status_id" id="maritals_status_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('maritals_status_id', $employees->maritals_status_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('maritals_status_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('maritals_status_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.numer_children')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="numer_children" type="text" class="form-control {{ $errors->has('numer_children') ? 'is-invalid' : '' }}"
+                        numer_children="numer_children" value="{{ old('numer_children', $employees->numer_children ?? '') }}"
+                        placeholder="@lang('employees.numer_children')">
+                    @if($errors->has('numer_children'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('numer_children') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.funtion_manual')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('funtion_manual') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('funtion_manual') ? 'is-invalid' : '' }} w-100"
+                        name="funtion_manual" id="funtion_manual">funtion_manual
+                        <option value="">@lang('employees.funtion_manual')</option>
+                        <option value="1" {{old('funtion_manual', $employee->funtion_manual ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('funtion_manual', $employee->funtion_manual ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('funtion_manual'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('funtion_manual') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.certificate_degrees')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('certificate_degrees') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('certificate_degrees') ? 'is-invalid' : '' }} w-100"
+                        name="certificate_degrees" id="certificate_degrees">
+                        <option value="">@lang('employees.certificate_degrees')</option>
+                        <option value="1" {{old('certificate_degrees', $employee->certificate_degrees ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('certificate_degrees', $employee->certificate_degrees ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('certificate_degrees'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('certificate_degrees') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.title_verification')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('title_verification') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('title_verification') ? 'is-invalid' : '' }} w-100"
+                        name="title_verification" id="title_verification">
+                        <option value="">@lang('employees.title_verification')</option>
+                        <option value="1" {{old('title_verification', $employee->title_verification ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('title_verification', $employee->title_verification ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('title_verification'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('title_verification') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.resolution_rethus')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('resolution_rethus') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('resolution_rethus') ? 'is-invalid' : '' }} w-100"
+                        name="resolution_rethus" id="resolution_rethus">
+                        <option value="">@lang('employees.resolution_rethus')</option>
+                        <option value="1" {{old('resolution_rethus', $employee->resolution_rethus ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('resolution_rethus', $employee->resolution_rethus ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('resolution_rethus'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('resolution_rethus') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.professional_card')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('professional_card') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('professional_card') ? 'is-invalid' : '' }} w-100"
+                        name="professional_card" id="professional_card">
+                        <option value="">@lang('employees.professional_card')</option>
+                        <option value="1" {{old('professional_card', $employee->professional_card ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('professional_card', $employee->professional_card ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('professional_card'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('professional_card') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.advan_life_support')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('advan_life_support') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('advan_life_support') ? 'is-invalid' : '' }} w-100"
+                        name="advan_life_support" id="advan_life_support">
+                        <option value="">@lang('employees.advan_life_support')</option>
+                        <option value="1" {{old('advan_life_support', $employee->advan_life_support ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('advan_life_support', $employee->advan_life_support ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('advan_life_support'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('advan_life_support') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.certific_victims_sexual_violence')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('certific_victims_sexual_violence') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('certific_victims_sexual_violence') ? 'is-invalid' : '' }} w-100"
+                        name="certific_victims_sexual_violence" id="certific_victims_sexual_violence">
+                        <option value="">@lang('employees.certific_victims_sexual_violence')</option>
+                        <option value="1" {{old('certific_victims_sexual_violence', $employee->certific_victims_sexual_violence ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('certific_victims_sexual_violence', $employee->certific_victims_sexual_violence ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('certific_victims_sexual_violence'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('certific_victims_sexual_violence') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.cout_ethics_certific')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('cout_ethics_certific') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('cout_ethics_certific') ? 'is-invalid' : '' }} w-100"
+                        name="cout_ethics_certific" id="cout_ethics_certific">
+                        <option value="">@lang('employees.cout_ethics_certific')</option>
+                        <option value="1" {{old('cout_ethics_certific', $employee->cout_ethics_certific ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('cout_ethics_certific', $employee->cout_ethics_certific ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('cout_ethics_certific'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('cout_ethics_certific') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.card_protect_validity')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('card_protect_validity') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('card_protect_validity') ? 'is-invalid' : '' }} w-100"
+                        name="card_protect_validity" id="card_protect_validity">
+                        <option value="">@lang('employees.card_protect_validity')</option>
+                        <option value="1" {{old('card_protect_validity', $employee->card_protect_validity ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('card_protect_validity', $employee->card_protect_validity ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('card_protect_validity'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('card_protect_validity') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.civil_liability_policy')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('civil_liability_policy') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('civil_liability_policy') ? 'is-invalid' : '' }} w-100"
+                        name="civil_liability_policy" id="civil_liability_policy">
+                        <option value="">@lang('employees.civil_liability_policy')</option>
+                        <option value="1" {{old('civil_liability_policy', $employee->civil_liability_policy ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('civil_liability_policy', $employee->civil_liability_policy ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('civil_liability_policy'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('civil_liability_policy') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.occupational_exam')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('occupational_exam') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('occupational_exam') ? 'is-invalid' : '' }} w-100"
+                        name="occupational_exam" id="occupational_exam">
+                        <option value="">@lang('employees.occupational_exam')</option>
+                        <option value="1" {{old('occupational_exam', $employee->occupational_exam ?? '') ? 'selected' : ''}}>Sí</option>
+                        <option value="0" {{old('occupational_exam', $employee->occupational_exam ?? '') ? 'selected' : ''}}>No</option>
+                    </select>
+                    @if($errors->has('occupational_exam'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('occupational_exam') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.health_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('health_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('health_id') ? 'is-invalid' : '' }} w-100"
+                        name="health_id" id="health_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('health_id', $employees->health_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('health_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('health_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.pension_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('pension_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('pension_id') ? 'is-invalid' : '' }} w-100"
+                        name="pension_id" id="pension_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('pension_id', $employees->pension_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('pension_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('pension_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.arl_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('arl_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('arl_id') ? 'is-invalid' : '' }} w-100"
+                        name="arl_id" id="arl_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('arl_id', $employees->arl_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('arl_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('arl_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.account_number')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="account_number" type="text" class="form-control {{ $errors->has('account_number') ? 'is-invalid' : '' }}"
+                        account_number="account_number" value="{{ old('account_number', $employees->account_number ?? '') }}"
+                        placeholder="@lang('employees.account_number')">
+                    @if($errors->has('account_number'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('account_number') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.account_types_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('account_types_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('account_types_id') ? 'is-invalid' : '' }} w-100"
+                        name="account_types_id" id="account_types_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('account_types_id', $employees->account_types_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('account_types_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('account_types_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.banks_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('banks_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('banks_id') ? 'is-invalid' : '' }} w-100"
+                        name="banks_id" id="banks_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('banks_id', $employees->banks_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('banks_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('banks_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.date_admission')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="date_admission" type="text" class="form-control {{ $errors->has('date_admission') ? 'is-invalid' : '' }}"
+                        date_admission="date_admission" value="{{ old('date_admission', $employees->date_admission ?? '') }}"
+                        placeholder="@lang('employees.date_admission')">
+                    @if($errors->has('date_admission'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('date_admission') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.contract_types_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('contract_types_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('contract_types_id') ? 'is-invalid' : '' }} w-100"
+                        name="contract_types_id" id="contract_types_id">
+                        <option value="">@lang('employees.select_title')</option>
+                        @foreach($titles as $title)
+                        <option value="{{$title->id}}" 
+                            {{ $title->id==old('contract_types_id', $employees->contract_types_id ?? '') ? 'selected' : '' }}>
+                            {{ $title->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('contract_types_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('contract_types_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.date_end')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="date_end" type="text" class="form-control {{ $errors->has('date_end') ? 'is-invalid' : '' }}"
+                        date_end="date_end" value="{{ old('date_end', $employees->date_end ?? '') }}"
+                        placeholder="@lang('employees.date_end')">
+                    @if($errors->has('date_end'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('date_end') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.observation')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input id="observation" type="text" class="form-control {{ $errors->has('observation') ? 'is-invalid' : '' }}"
+                        observation="observation" value="{{ old('observation', $employees->observation ?? '') }}"
+                        placeholder="@lang('employees.observation')">
+                    @if($errors->has('observation'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('observation') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
         </div>
 
         <div class="row">
