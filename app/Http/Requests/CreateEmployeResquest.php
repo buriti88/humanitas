@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
+use App\Http\Requests\Abstracts\BasicModelRequest;
 
-class CreateEmployeResquest extends FormRequest
+class CreateEmployeResquest extends BasicModelRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CreateEmployeResquest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class CreateEmployeResquest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|max:191',
+            'last_name' => 'required|string|max:191',
+            'title_id' => 'required',
         ];
+    }
+
+     /**
+     * @return string
+     */
+    protected function getLangFile(): string
+    {
+        return 'employees';
     }
 }

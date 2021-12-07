@@ -57,6 +57,7 @@ class CreateEmployeesTable extends Migration
             $table->boolean('status')->default(1)->nullable();
             $table->timestamps();
 
+            /* Índices de campos foráneos de otras tablas */
             $table->foreign('title_id')->references('id')->on('lists');
             $table->foreign('gender_id')->references('id')->on('lists');
             $table->foreign('municipality_id')->references('id')->on('lists');
