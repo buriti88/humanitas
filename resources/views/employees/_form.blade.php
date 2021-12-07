@@ -342,7 +342,7 @@
                     </span>
                     @endif
                 </div>
-            </div>|
+            </div>
 
             <div class="col-sm-3">
                 <label>*@lang('employees.title_verification')</label>
