@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\ProjectControllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateEmployeeRequest;
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 
 class EmployeeController extends Controller
 {
@@ -53,9 +57,26 @@ class EmployeeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateEmployeeRequest $request)
     {
-        //
+        try {
+            DB::beginTransaction();
+
+            $employees = new Employee($request->validated());
+
+            if ($employees->save()) {
+                Session::flash('success', __('employees.created', ['name' => $employees->name . ' ' . $employees->last_name]));
+                DB::commit();
+            } else {
+                Session::flash('error', __('employees.error', ['name' => $employees->name . ' ' . $employees->last_name, 'action' => 'crear']));
+                DB::rollBack();
+            }
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error($e->getMessage());
+        }
+
+        return redirect()->route('employees.index');
     }
 
     /**
