@@ -23,6 +23,7 @@ class Employee extends Model
     protected $fillable = [
         'title_id',
         'name',
+        'last_name',
         'habeas_data',
         'identification_card',
         'expedition_date',
