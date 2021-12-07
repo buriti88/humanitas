@@ -23,8 +23,8 @@
         </div>
     </div>
     <div class="col-sm-12 col-lg-4 mt-3">
-        <button type="submit" class="btn btn-sm btn-primary mb-2">@lang('base_lang.search')</button>
-        <a href="{{url('admin/employees?q[]')}}" class="btn btn-sm btn-primary mb-2">
+        <button type="submit" class="btn btn-sm btn-primary mb-1">@lang('base_lang.search')</button>
+        <a href="{{url('admin/employees?q[]')}}" class="btn btn-sm btn-primary mb-1">
             @lang('base_lang.clear_search')
         </a>
     </div>

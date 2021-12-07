@@ -24,7 +24,7 @@
             </a>
         </td>
         <td>{!! ($employee->title->option ?? '') !!}</td>
-        <td>{!! ($employee->name) !!}</td>
+        <td>{!! ($employee->name) . ' ' . ($employee->last_name) !!}</td>
 
         @permission(['edit_employees', 'all_employees'])
         <td class="text-center">
