@@ -358,78 +358,93 @@
             
             <div class="col-sm-3">
                 <label>*@lang('employees.title_verification')</label>
-                <div
-                    class="input-group input-group-sm mb-2 {{ $errors->has('title_verification') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('title_verification') ? 'is-invalid' : '' }} w-100"
-                        name="title_verification" id="title_verification">
-                        <option value="">@lang('employees.title_verification')</option>
-                        <option value="1" {{old('title_verification', $employee->title_verification ?? '') ? 'selected'
-                            : ''}}>Sí</option>
-                        <option value="0" {{old('title_verification', $employee->title_verification ?? '') ? 'selected'
-                            : ''}}>No</option>
-                    </select>
-                    @if($errors->has('title_verification'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('title_verification') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group {{ $errors->has('title_verification') ? 'is-invalid' : '' }} mb-1">
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="yes_title_verification" name="title_verification"
+                                value="1" {{old('title_verification', $employee->title_verification ?? '') ? 'checked' : ''}}>
+                            <label for="yes_title_verification"
+                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="not_title_verification" name="title_verification"
+                                value="0" {{old('title_verification', $employee->title_verification ?? '') == "0" ? 'checked' : ''}}>
+                            <label for="not_title_verification" class="custom-control-label">@lang('base_lang.not')</label>
+                        </div>
+                    </label>
                 </div>
+                @if($errors->has('title_verification'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('title_verification') }}</strong>
+                </span>
+                @endif
             </div>
 
             <div class="col-sm-3">
                 <label>*@lang('employees.resolution_rethus')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('resolution_rethus') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('resolution_rethus') ? 'is-invalid' : '' }} w-100"
-                        name="resolution_rethus" id="resolution_rethus">
-                        <option value="">@lang('employees.resolution_rethus')</option>
-                        <option value="1" {{old('resolution_rethus', $employee->resolution_rethus ?? '') ? 'selected' :
-                            ''}}>Sí</option>
-                        <option value="0" {{old('resolution_rethus', $employee->resolution_rethus ?? '') ? 'selected' :
-                            ''}}>No</option>
-                    </select>
-                    @if($errors->has('resolution_rethus'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('resolution_rethus') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group {{ $errors->has('resolution_rethus') ? 'is-invalid' : '' }} mb-1">
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="yes_resolution_rethus" name="resolution_rethus"
+                                value="1" {{old('resolution_rethus', $employee->resolution_rethus ?? '') ? 'checked' : ''}}>
+                            <label for="yes_resolution_rethus"
+                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="not_resolution_rethus" name="resolution_rethus"
+                                value="0" {{old('resolution_rethus', $employee->resolution_rethus ?? '') == "0" ? 'checked' : ''}}>
+                            <label for="not_resolution_rethus" class="custom-control-label">@lang('base_lang.not')</label>
+                        </div>
+                    </label>
                 </div>
+                @if($errors->has('resolution_rethus'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('resolution_rethus') }}</strong>
+                </span>
+                @endif
             </div>
 
             <div class="col-sm-3">
                 <label>*@lang('employees.professional_card')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('professional_card') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('professional_card') ? 'is-invalid' : '' }} w-100"
-                        name="professional_card" id="professional_card">
-                        <option value="">@lang('employees.professional_card')</option>
-                        <option value="1" {{old('professional_card', $employee->professional_card ?? '') ? 'selected' :
-                            ''}}>Sí</option>
-                        <option value="0" {{old('professional_card', $employee->professional_card ?? '') ? 'selected' :
-                            ''}}>No</option>
-                    </select>
-                    @if($errors->has('professional_card'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('professional_card') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group {{ $errors->has('professional_card') ? 'is-invalid' : '' }} mb-1">
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="yes_professional_card" name="professional_card"
+                                value="1" {{old('professional_card', $employee->professional_card ?? '') ? 'checked' : ''}}>
+                            <label for="yes_professional_card"
+                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="not_professional_card" name="professional_card"
+                                value="0" {{old('professional_card', $employee->professional_card ?? '') == "0" ? 'checked' : ''}}>
+                            <label for="not_professional_card" class="custom-control-label">@lang('base_lang.not')</label>
+                        </div>
+                    </label>
                 </div>
+                @if($errors->has('professional_card'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('professional_card') }}</strong>
+                </span>
+                @endif
             </div>
 
             <div class="col-sm-3">
-                <label>*@lang('employees.advan_life_support')</label>
-                <div
-                    class="input-group input-group-sm mb-2 {{ $errors->has('advan_life_support') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('advan_life_support') ? 'is-invalid' : '' }} w-100"
-                        name="advan_life_support" id="advan_life_support">
-                        <option value="">@lang('employees.advan_life_support')</option>
-                        <option value="1" {{old('advan_life_support', $employee->advan_life_support ?? '') ? 'selected'
-                            : ''}}>Sí</option>
-                        <option value="0" {{old('advan_life_support', $employee->advan_life_support ?? '') ? 'selected'
-                            : ''}}>No</option>
-                    </select>
+                <label>@lang('employees.advan_life_support')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-id-card"></i></div>
+                    </div>
+                    <input type="text" name="advan_life_support"
+                        class="form-control {{ $errors->has('advan_life_support') ? 'is-invalid' : '' }} datepicker" id="advan_life_support"
+                        data-date-format="{{config('app.js_date_format')}}"
+                        placeholder="@lang('employees.advan_life_support')" autocomplete="off"
+                        value="{{ old('advan_life_support', $employees->advan_life_support ? format_date_time($employees->advan_life_support, 'd/m/Y' ) : '')}}">
                     @if($errors->has('advan_life_support'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('advan_life_support') }}</strong>
@@ -440,106 +455,133 @@
 
             <div class="col-sm-3">
                 <label>*@lang('employees.certific_victims_sexual_violence')</label>
-                <div
-                    class="input-group input-group-sm mb-2 {{ $errors->has('certific_victims_sexual_violence') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('certific_victims_sexual_violence') ? 'is-invalid' : '' }} w-100"
-                        name="certific_victims_sexual_violence" id="certific_victims_sexual_violence">
-                        <option value="">@lang('employees.certific_victims_sexual_violence')</option>
-                        <option value="1" {{old('certific_victims_sexual_violence', $employee->
-                            certific_victims_sexual_violence ?? '') ? 'selected' : ''}}>Sí</option>
-                        <option value="0" {{old('certific_victims_sexual_violence', $employee->
-                            certific_victims_sexual_violence ?? '') ? 'selected' : ''}}>No</option>
-                    </select>
-                    @if($errors->has('certific_victims_sexual_violence'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('certific_victims_sexual_violence') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group {{ $errors->has('certific_victims_sexual_violence') ? 'is-invalid' : '' }} mb-1">
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="yes_certific_victims_sexual_violence" name="certific_victims_sexual_violence"
+                                value="1" {{old('certific_victims_sexual_violence', $employee->certific_victims_sexual_violence ?? '') ? 'checked' : ''}}>
+                            <label for="yes_certific_victims_sexual_violence"
+                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="not_certific_victims_sexual_violence" name="certific_victims_sexual_violence"
+                                value="0" {{old('certific_victims_sexual_violence', $employee->certific_victims_sexual_violence ?? '') == "0" ? 'checked' : ''}}>
+                            <label for="not_certific_victims_sexual_violence" class="custom-control-label">@lang('base_lang.not')</label>
+                        </div>
+                    </label>
                 </div>
+                @if($errors->has('certific_victims_sexual_violence'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('certific_victims_sexual_violence') }}</strong>
+                </span>
+                @endif
             </div>
 
             <div class="col-sm-3">
                 <label>*@lang('employees.court_ethics_certific')</label>
-                <div
-                    class="input-group input-group-sm mb-2 {{ $errors->has('court_ethics_certific') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('court_ethics_certific') ? 'is-invalid' : '' }} w-100"
-                        name="court_ethics_certific" id="court_ethics_certific">
-                        <option value="">@lang('employees.court_ethics_certific')</option>
-                        <option value="1" {{old('court_ethics_certific', $employee->court_ethics_certific ?? '') ?
-                            'selected' : ''}}>Sí</option>
-                        <option value="0" {{old('court_ethics_certific', $employee->court_ethics_certific ?? '') ?
-                            'selected' : ''}}>No</option>
-                    </select>
-                    @if($errors->has('court_ethics_certific'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('court_ethics_certific') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group {{ $errors->has('court_ethics_certific') ? 'is-invalid' : '' }} mb-1">
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="yes_court_ethics_certific" name="court_ethics_certific"
+                                value="1" {{old('court_ethics_certific', $employee->court_ethics_certific ?? '') ? 'checked' : ''}}>
+                            <label for="yes_court_ethics_certific"
+                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="not_court_ethics_certific" name="court_ethics_certific"
+                                value="0" {{old('court_ethics_certific', $employee->court_ethics_certific ?? '') == "0" ? 'checked' : ''}}>
+                            <label for="not_court_ethics_certific" class="custom-control-label">@lang('base_lang.not')</label>
+                        </div>
+                    </label>
                 </div>
+                @if($errors->has('court_ethics_certific'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('court_ethics_certific') }}</strong>
+                </span>
+                @endif
             </div>
 
+            
             <div class="col-sm-3">
                 <label>*@lang('employees.card_protect_validity')</label>
-                <div
-                    class="input-group input-group-sm mb-2 {{ $errors->has('card_protect_validity') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('card_protect_validity') ? 'is-invalid' : '' }} w-100"
-                        name="card_protect_validity" id="card_protect_validity">
-                        <option value="">@lang('employees.card_protect_validity')</option>
-                        <option value="1" {{old('card_protect_validity', $employee->card_protect_validity ?? '') ?
-                            'selected' : ''}}>Sí</option>
-                        <option value="0" {{old('card_protect_validity', $employee->card_protect_validity ?? '') ?
-                            'selected' : ''}}>No</option>
-                    </select>
-                    @if($errors->has('card_protect_validity'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('card_protect_validity') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group {{ $errors->has('card_protect_validity') ? 'is-invalid' : '' }} mb-1">
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="yes_card_protect_validity" name="card_protect_validity"
+                                value="1" {{old('card_protect_validity', $employee->card_protect_validity ?? '') ? 'checked' : ''}}>
+                            <label for="yes_card_protect_validity"
+                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="not_card_protect_validity" name="card_protect_validity"
+                                value="0" {{old('card_protect_validity', $employee->card_protect_validity ?? '') == "0" ? 'checked' : ''}}>
+                            <label for="not_card_protect_validity" class="custom-control-label">@lang('base_lang.not')</label>
+                        </div>
+                    </label>
                 </div>
+                @if($errors->has('card_protect_validity'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('card_protect_validity') }}</strong>
+                </span>
+                @endif
             </div>
 
             <div class="col-sm-3">
                 <label>*@lang('employees.civil_liability_policy')</label>
-                <div
-                    class="input-group input-group-sm mb-2 {{ $errors->has('civil_liability_policy') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('civil_liability_policy') ? 'is-invalid' : '' }} w-100"
-                        name="civil_liability_policy" id="civil_liability_policy">
-                        <option value="">@lang('employees.civil_liability_policy')</option>
-                        <option value="1" {{old('civil_liability_policy', $employee->civil_liability_policy ?? '') ?
-                            'selected' : ''}}>Sí</option>
-                        <option value="0" {{old('civil_liability_policy', $employee->civil_liability_policy ?? '') ?
-                            'selected' : ''}}>No</option>
-                    </select>
-                    @if($errors->has('civil_liability_policy'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('civil_liability_policy') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group {{ $errors->has('civil_liability_policy') ? 'is-invalid' : '' }} mb-1">
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="yes_civil_liability_policy" name="civil_liability_policy"
+                                value="1" {{old('civil_liability_policy', $employee->civil_liability_policy ?? '') ? 'checked' : ''}}>
+                            <label for="yes_civil_liability_policy"
+                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="not_civil_liability_policy" name="civil_liability_policy"
+                                value="0" {{old('civil_liability_policy', $employee->civil_liability_policy ?? '') == "0" ? 'checked' : ''}}>
+                            <label for="not_civil_liability_policy" class="custom-control-label">@lang('base_lang.not')</label>
+                        </div>
+                    </label>
                 </div>
+                @if($errors->has('civil_liability_policy'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('civil_liability_policy') }}</strong>
+                </span>
+                @endif
             </div>
 
             <div class="col-sm-3">
                 <label>*@lang('employees.occupational_exam')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('occupational_exam') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('occupational_exam') ? 'is-invalid' : '' }} w-100"
-                        name="occupational_exam" id="occupational_exam">
-                        <option value="">@lang('employees.occupational_exam')</option>
-                        <option value="1" {{old('occupational_exam', $employee->occupational_exam ?? '') ? 'selected' :
-                            ''}}>Sí</option>
-                        <option value="0" {{old('occupational_exam', $employee->occupational_exam ?? '') ? 'selected' :
-                            ''}}>No</option>
-                    </select>
-                    @if($errors->has('occupational_exam'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('occupational_exam') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group {{ $errors->has('occupational_exam') ? 'is-invalid' : '' }} mb-1">
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="yes_occupational_exam" name="occupational_exam"
+                                value="1" {{old('occupational_exam', $employee->occupational_exam ?? '') ? 'checked' : ''}}>
+                            <label for="yes_occupational_exam"
+                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="not_occupational_exam" name="occupational_exam"
+                                value="0" {{old('occupational_exam', $employee->occupational_exam ?? '') == "0" ? 'checked' : ''}}>
+                            <label for="not_occupational_exam" class="custom-control-label">@lang('base_lang.not')</label>
+                        </div>
+                    </label>
                 </div>
+                @if($errors->has('occupational_exam'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('occupational_exam') }}</strong>
+                </span>
+                @endif
             </div>
 
             <div class="col-sm-3">
