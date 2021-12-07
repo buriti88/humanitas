@@ -100,15 +100,15 @@
             </div>
 
             <div class="col-sm-3">
-                <label>*@lang('employees.genders_id')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('genders_id') ? 'has-error' : '' }}">
-                    <select class="form-control-sm select2 {{ $errors->has('genders_id') ? 'is-invalid' : '' }} w-100"
-                        name="genders_id" id="genders_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('genders_id', $employees->genders_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                <label>*@lang('employees.gender_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('gender_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('gender_id') ? 'is-invalid' : '' }} w-100"
+                        name="gender_id" id="gender_id">
+                        <option value="">@lang('employees.select_gender')</option>
+                        @foreach($genders as $gender)
+                        <option value="{{$gender->id}}" 
+                            {{ $gender->id==old('gender_id', $employees->gender_id ?? '') ? 'selected' : '' }}>
+                            {{ $gender->option }}
                         </option>
                         @endforeach
                     </select>
@@ -159,11 +159,11 @@
                 <div class="input-group input-group-sm mb-2 {{ $errors->has('municipality_id') ? 'has-error' : '' }}">
                     <select class="form-control-sm select2 {{ $errors->has('municipality_id') ? 'is-invalid' : '' }} w-100"
                         name="municipality_id" id="municipality_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('municipality_id', $employees->municipality_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                        <option value="">@lang('employees.select_municipality')</option>
+                        @foreach($municipalities as $municipality)
+                        <option value="{{$municipality->id}}" 
+                            {{ $municipality->id==old('municipality_id', $employees->municipality_id ?? '') ? 'selected' : '' }}>
+                            {{ $municipality->option }}
                         </option>
                         @endforeach
                     </select>
@@ -197,11 +197,11 @@
                 <div class="input-group input-group-sm mb-2 {{ $errors->has('type_housing_id') ? 'has-error' : '' }}">
                     <select class="form-control-sm select2 {{ $errors->has('type_housing_id') ? 'is-invalid' : '' }} w-100"
                         name="type_housing_id" id="type_housing_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('type_housing_id', $employees->type_housing_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                        <option value="">@lang('employees.select_type_housing')</option>
+                        @foreach($types_of_housing as $type_housing)
+                        <option value="{{$type_housing->id}}" 
+                            {{ $type_housing->id==old('type_housing_id', $employees->type_housing_id ?? '') ? 'selected' : '' }}>
+                            {{ $type_housing->option }}
                         </option>
                         @endforeach
                     </select>
@@ -214,21 +214,21 @@
             </div>
 
             <div class="col-sm-3">
-                <label>*@lang('employees.stratums_id')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('stratums_id') ? 'has-error' : '' }}">
-                    <select class="form-control-sm select2 {{ $errors->has('stratums_id') ? 'is-invalid' : '' }} w-100"
-                        name="stratums_id" id="stratums_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('stratums_id', $employees->stratums_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                <label>*@lang('employees.stratum_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('stratum_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('stratum_id') ? 'is-invalid' : '' }} w-100"
+                        name="stratum_id" id="stratum_id">
+                        <option value="">@lang('employees.select_stratum')</option>
+                        @foreach($stratums as $stratum)
+                        <option value="{{$stratum->id}}" 
+                            {{ $stratum->id==old('stratum_id', $employees->stratum_id ?? '') ? 'selected' : '' }}>
+                            {{ $stratum->option }}
                         </option>
                         @endforeach
                     </select>
-                    @if($errors->has('stratums_id'))
+                    @if($errors->has('stratum_id'))
                     <span class="invalid-feedback">
-                        <strong>{{ $errors->first('stratums_id') }}</strong>
+                        <strong>{{ $errors->first('stratum_id') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -256,11 +256,11 @@
                 <div class="input-group input-group-sm mb-2 {{ $errors->has('rh_id') ? 'has-error' : '' }}">
                     <select class="form-control-sm select2 {{ $errors->has('rh_id') ? 'is-invalid' : '' }} w-100"
                         name="rh_id" id="rh_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('rh_id', $employees->rh_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                        <option value="">@lang('employees.select_rh')</option>
+                        @foreach($rh as $r)
+                        <option value="{{$r->id}}" 
+                            {{ $r->id==old('rh_id', $employees->rh_id ?? '') ? 'selected' : '' }}>
+                            {{ $r->option }}
                         </option>
                         @endforeach
                     </select>
@@ -273,21 +273,21 @@
             </div>
 
             <div class="col-sm-3">
-                <label>*@lang('employees.maritals_status_id')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('maritals_status_id') ? 'has-error' : '' }}">
-                    <select class="form-control-sm select2 {{ $errors->has('maritals_status_id') ? 'is-invalid' : '' }} w-100"
-                        name="maritals_status_id" id="maritals_status_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('maritals_status_id', $employees->maritals_status_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                <label>*@lang('employees.marital_status_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('marital_status_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('marital_status_id') ? 'is-invalid' : '' }} w-100"
+                        name="marital_status_id" id="marital_status_id">
+                        <option value="">@lang('employees.select_marital_status')</option>
+                        @foreach($maritals_status as $marital_status)
+                        <option value="{{$marital_status->id}}" 
+                            {{ $marital_status->id==old('marital_status_id', $employees->marital_status_id ?? '') ? 'selected' : '' }}>
+                            {{ $marital_status->option }}
                         </option>
                         @endforeach
                     </select>
-                    @if($errors->has('maritals_status_id'))
+                    @if($errors->has('marital_status_id'))
                     <span class="invalid-feedback">
-                        <strong>{{ $errors->first('maritals_status_id') }}</strong>
+                        <strong>{{ $errors->first('marital_status_id') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -342,7 +342,7 @@
                     </span>
                     @endif
                 </div>
-            </div>
+            </div>|
 
             <div class="col-sm-3">
                 <label>*@lang('employees.title_verification')</label>
@@ -502,11 +502,11 @@
                 <div class="input-group input-group-sm mb-2 {{ $errors->has('health_id') ? 'has-error' : '' }}">
                     <select class="form-control-sm select2 {{ $errors->has('health_id') ? 'is-invalid' : '' }} w-100"
                         name="health_id" id="health_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('health_id', $employees->health_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                        <option value="">@lang('employees.select_health')</option>
+                        @foreach($health as $h)
+                        <option value="{{$h->id}}" 
+                            {{ $h->id==old('health_id', $employees->health_id ?? '') ? 'selected' : '' }}>
+                            {{ $h->option }}
                         </option>
                         @endforeach
                     </select>
@@ -523,11 +523,11 @@
                 <div class="input-group input-group-sm mb-2 {{ $errors->has('pension_id') ? 'has-error' : '' }}">
                     <select class="form-control-sm select2 {{ $errors->has('pension_id') ? 'is-invalid' : '' }} w-100"
                         name="pension_id" id="pension_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('pension_id', $employees->pension_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                        <option value="">@lang('employees.select_pension')</option>
+                        @foreach($pension as $p)
+                        <option value="{{$p->id}}" 
+                            {{ $p->id==old('pension_id', $employees->pension_id ?? '') ? 'selected' : '' }}>
+                            {{ $p->option }}
                         </option>
                         @endforeach
                     </select>
@@ -544,11 +544,11 @@
                 <div class="input-group input-group-sm mb-2 {{ $errors->has('arl_id') ? 'has-error' : '' }}">
                     <select class="form-control-sm select2 {{ $errors->has('arl_id') ? 'is-invalid' : '' }} w-100"
                         name="arl_id" id="arl_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('arl_id', $employees->arl_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                        <option value="">@lang('employees.select_arl')</option>
+                        @foreach($arl as $ar)
+                        <option value="{{$ar->id}}" 
+                            {{ $ar->id==old('arl_id', $employees->arl_id ?? '') ? 'selected' : '' }}>
+                            {{ $ar->option }}
                         </option>
                         @endforeach
                     </select>
@@ -578,42 +578,42 @@
             </div>
 
             <div class="col-sm-3">
-                <label>*@lang('employees.account_types_id')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('account_types_id') ? 'has-error' : '' }}">
-                    <select class="form-control-sm select2 {{ $errors->has('account_types_id') ? 'is-invalid' : '' }} w-100"
-                        name="account_types_id" id="account_types_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('account_types_id', $employees->account_types_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                <label>*@lang('employees.account_type_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('account_type_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('account_type_id') ? 'is-invalid' : '' }} w-100"
+                        name="account_type_id" id="account_type_id">
+                        <option value="">@lang('employees.select_account_type')</option>
+                        @foreach($account_types as $account_type)
+                        <option value="{{$account_type->id}}" 
+                            {{ $account_type->id==old('account_type_id', $employees->account_type_id ?? '') ? 'selected' : '' }}>
+                            {{ $account_type->option }}
                         </option>
                         @endforeach
                     </select>
-                    @if($errors->has('account_types_id'))
+                    @if($errors->has('account_type_id'))
                     <span class="invalid-feedback">
-                        <strong>{{ $errors->first('account_types_id') }}</strong>
+                        <strong>{{ $errors->first('account_type_id') }}</strong>
                     </span>
                     @endif
                 </div>
             </div>
 
             <div class="col-sm-3">
-                <label>*@lang('employees.banks_id')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('banks_id') ? 'has-error' : '' }}">
-                    <select class="form-control-sm select2 {{ $errors->has('banks_id') ? 'is-invalid' : '' }} w-100"
-                        name="banks_id" id="banks_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('banks_id', $employees->banks_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                <label>*@lang('employees.bank_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('bank_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('bank_id') ? 'is-invalid' : '' }} w-100"
+                        name="bank_id" id="bank_id">
+                        <option value="">@lang('employees.select_bank')</option>
+                        @foreach($banks as $bank)
+                        <option value="{{$bank->id}}" 
+                            {{ $bank->id==old('bank_id', $employees->bank_id ?? '') ? 'selected' : '' }}>
+                            {{ $bank->option }}
                         </option>
                         @endforeach
                     </select>
-                    @if($errors->has('banks_id'))
+                    @if($errors->has('bank_id'))
                     <span class="invalid-feedback">
-                        <strong>{{ $errors->first('banks_id') }}</strong>
+                        <strong>{{ $errors->first('bank_id') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -641,11 +641,11 @@
                 <div class="input-group input-group-sm mb-2 {{ $errors->has('contract_types_id') ? 'has-error' : '' }}">
                     <select class="form-control-sm select2 {{ $errors->has('contract_types_id') ? 'is-invalid' : '' }} w-100"
                         name="contract_types_id" id="contract_types_id">
-                        <option value="">@lang('employees.select_title')</option>
-                        @foreach($titles as $title)
-                        <option value="{{$title->id}}" 
-                            {{ $title->id==old('contract_types_id', $employees->contract_types_id ?? '') ? 'selected' : '' }}>
-                            {{ $title->option }}
+                        <option value="">@lang('employees.select_contract_types')</option>
+                        @foreach($contract_types as $contract_types)
+                        <option value="{{$contract_types->id}}" 
+                            {{ $contract_types->id==old('contract_types_id', $employees->contract_types_id ?? '') ? 'selected' : '' }}>
+                            {{ $contract_types->option }}
                         </option>
                         @endforeach
                     </select>
