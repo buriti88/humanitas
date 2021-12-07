@@ -18,7 +18,7 @@
     @forelse($employees as $employee)
     <tr>
         <td class="text-center">
-            <a href="{{ url("/insurances/{$insurance->id}") }}" class="btn btn-default btn-xs"
+            <a href="{{ url("/employees/{$employee->id}") }}" class="btn btn-default btn-xs"
                 title="@lang('base_lang.detail')">
                 <i class="fa fa-fw fa-file-alt icon_color"></i>
             </a>
