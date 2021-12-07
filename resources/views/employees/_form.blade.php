@@ -330,25 +330,32 @@
 
             <div class="col-sm-3">
                 <label>*@lang('employees.certificate_degress')</label>
-                <div
-                    class="input-group input-group-sm mb-2 {{ $errors->has('certificate_degress') ? 'has-error' : '' }}">
-                    <select
-                        class="form-control-sm select2 {{ $errors->has('certificate_degress') ? 'is-invalid' : '' }} w-100"
-                        name="certificate_degress" id="certificate_degress">
-                        <option value="">@lang('employees.certificate_degress')</option>
-                        <option value="1" {{old('certificate_degress', $employee->certificate_degress ?? '') ?
-                            'selected' : ''}}>Sí</option>
-                        <option value="0" {{old('certificate_degress', $employee->certificate_degress ?? '') ?
-                            'selected' : ''}}>No</option>
-                    </select>
-                    @if($errors->has('certificate_degress'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('certificate_degress') }}</strong>
-                    </span>
-                    @endif
+                <div class="form-group {{ $errors->has('certificate_degress') ? 'is-invalid' : '' }} mb-1">
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="yes_certificate_degress"
+                                name="certificate_degress" value="1" {{old('certificate_degress', $employee->certificate_degress ?? '')
+                            ? 'checked' : ''}}>
+                            <label for="yes_certificate_degress"
+                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="custom-control custom-radio radio-inline">
+                            <input class="custom-control-input" type="radio" id="not_certificate_degress"
+                                name="certificate_degress" value="0" {{old('certificate_degress', $employee->certificate_degress ?? '')
+                            == "0" ? 'checked' : ''}}>
+                            <label for="not_certificate_degress" class="custom-control-label">@lang('base_lang.not')</label>
+                        </div>
+                    </label>
                 </div>
+                @if($errors->has('certificate_degress'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('certificate_degress') }}</strong>
+                </span>
+                @endif
             </div>
-
+            
             <div class="col-sm-3">
                 <label>*@lang('employees.title_verification')</label>
                 <div
@@ -659,18 +666,18 @@
                     @endif
                 </div>
             </div>
-
+            
             <div class="col-sm-3">
-                <label>*@lang('employees.date_admission')</label>
+                <label>@lang('employees.date_admission')</label>
                 <div class="input-group input-group-sm mb-2">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                        <div class="input-group-text"><i class="fa fa-id-card"></i></div>
                     </div>
-                    <input id="date_admission" type="text"
-                        class="form-control {{ $errors->has('date_admission') ? 'is-invalid' : '' }}"
-                        date_admission="date_admission"
-                        value="{{ old('date_admission', $employees->date_admission ?? '') }}"
-                        placeholder="@lang('employees.date_admission')">
+                    <input type="text" name="date_admission"
+                        class="form-control {{ $errors->has('date_admission') ? 'is-invalid' : '' }} datepicker" id="date_admission"
+                        data-date-format="{{config('app.js_date_format')}}"
+                        placeholder="@lang('employees.date_admission')" autocomplete="off"
+                        value="{{ old('date_admission', $employees->date_admission ? format_date_time($employees->date_admission, 'd/m/Y' ) : '')}}">
                     @if($errors->has('date_admission'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('date_admission') }}</strong>
@@ -702,15 +709,16 @@
             </div>
 
             <div class="col-sm-3">
-                <label>*@lang('employees.date_end')</label>
+                <label>@lang('employees.date_end')</label>
                 <div class="input-group input-group-sm mb-2">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                        <div class="input-group-text"><i class="fa fa-id-card"></i></div>
                     </div>
-                    <input id="date_end" type="text"
-                        class="form-control {{ $errors->has('date_end') ? 'is-invalid' : '' }}" date_end="date_end"
-                        value="{{ old('date_end', $employees->date_end ?? '') }}"
-                        placeholder="@lang('employees.date_end')">
+                    <input type="text" name="date_end"
+                        class="form-control {{ $errors->has('date_end') ? 'is-invalid' : '' }} datepicker" id="date_end"
+                        data-date-format="{{config('app.js_date_format')}}"
+                        placeholder="@lang('employees.date_end')" autocomplete="off"
+                        value="{{ old('date_end', $employees->date_end ? format_date_time($employees->date_end, 'd/m/Y' ) : '')}}">
                     @if($errors->has('date_end'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('date_end') }}</strong>
