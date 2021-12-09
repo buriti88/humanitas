@@ -115,9 +115,9 @@
                         </option>
                         @endforeach
                     </select>
-                    @if($errors->has('genders_id'))
+                    @if($errors->has('gender_id'))
                     <span class="invalid-feedback">
-                        <strong>{{ $errors->first('genders_id') }}</strong>
+                        <strong>{{ $errors->first('gender_id') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -648,9 +648,8 @@
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_funtion_manual"
-                                name="funtion_manual" value="1" {{old('funtion_manual', $employees->funtion_manual ??
-                            '')
-                            ? 'checked' : ''}}>
+                                name="funtion_manual" value="1" {{old('funtion_manual',
+                                $employees->funtion_manual ?? '') ? 'checked' : ''}}>
                             <label for="yes_funtion_manual"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -658,10 +657,10 @@
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_funtion_manual"
-                                name="funtion_manual" value="0" {{old('funtion_manual', $employees->funtion_manual ??
-                            '')
-                            == "0" ? 'checked' : ''}}>
-                            <label for="not_funtion_manual" class="custom-control-label">@lang('base_lang.not')</label>
+                                name="funtion_manual" value="0" {{old('funtion_manual',
+                                $employees->funtion_manual ?? '') == "0" ? 'checked' : ''}}>
+                            <label for="not_funtion_manual"
+                                class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
                     </label>
                 </div>
