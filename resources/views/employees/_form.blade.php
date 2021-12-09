@@ -124,6 +124,27 @@
             </div>
 
             <div class="col-sm-3">
+                <label>*@lang('employees.rh_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('rh_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('rh_id') ? 'is-invalid' : '' }} w-100"
+                        name="rh_id" id="rh_id">
+                        <option value="">@lang('employees.select_rh')</option>
+                        @foreach($rh as $r)
+                        <option value="{{$r->id}}" {{ $r->id==old('rh_id', $employees->rh_id ?? '') ? 'selected' : ''
+                            }}>
+                            {{ $r->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('rh_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('rh_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
                 <label>*@lang('employees.telephone')</label>
                 <div class="input-group input-group-sm mb-2">
                     <div class="input-group-prepend">
@@ -136,6 +157,23 @@
                     @if($errors->has('telephone'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('telephone') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <label>*@lang('employees.email')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
+                    </div>
+                    <input id="email" type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
+                        email="email" value="{{ old('email', $employees->email ?? '') }}"
+                        placeholder="@lang('employees.email')">
+                    @if($errors->has('email'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('email') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -160,6 +198,24 @@
             </div>
 
             <div class="col-sm-3">
+                <label>*@lang('employees.neighborhood')</label>
+                <div class="input-group input-group-sm mb-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-location-arrow"></i></div>
+                    </div>
+                    <input id="neighborhood" type="text"
+                        class="form-control {{ $errors->has('neighborhood') ? 'is-invalid' : '' }}"
+                        neighborhood="neighborhood" value="{{ old('neighborhood', $employees->neighborhood ?? '') }}"
+                        placeholder="@lang('employees.neighborhood')">
+                    @if($errors->has('neighborhood'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('neighborhood') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
                 <label>*@lang('employees.municipality_id')</label>
                 <div class="input-group input-group-sm mb-2 {{ $errors->has('municipality_id') ? 'has-error' : '' }}">
                     <select
@@ -176,24 +232,6 @@
                     @if($errors->has('municipality_id'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('municipality_id') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <label>*@lang('employees.neighborhood')</label>
-                <div class="input-group input-group-sm mb-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fas fa-location-arrow"></i></div>
-                    </div>
-                    <input id="neighborhood" type="text"
-                        class="form-control {{ $errors->has('neighborhood') ? 'is-invalid' : '' }}"
-                        neighborhood="neighborhood" value="{{ old('neighborhood', $employees->neighborhood ?? '') }}"
-                        placeholder="@lang('employees.neighborhood')">
-                    @if($errors->has('neighborhood'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('neighborhood') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -237,44 +275,6 @@
                     @if($errors->has('stratum_id'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('stratum_id') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <label>*@lang('employees.email')</label>
-                <div class="input-group input-group-sm mb-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fas fa-envelope"></i></div>
-                    </div>
-                    <input id="email" type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                        email="email" value="{{ old('email', $employees->email ?? '') }}"
-                        placeholder="@lang('employees.email')">
-                    @if($errors->has('email'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('email') }}</strong>
-                    </span>
-                    @endif
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <label>*@lang('employees.rh_id')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('rh_id') ? 'has-error' : '' }}">
-                    <select class="form-control-sm select2 {{ $errors->has('rh_id') ? 'is-invalid' : '' }} w-100"
-                        name="rh_id" id="rh_id">
-                        <option value="">@lang('employees.select_rh')</option>
-                        @foreach($rh as $r)
-                        <option value="{{$r->id}}" {{ $r->id==old('rh_id', $employees->rh_id ?? '') ? 'selected' : ''
-                            }}>
-                            {{ $r->option }}
-                        </option>
-                        @endforeach
-                    </select>
-                    @if($errors->has('rh_id'))
-                    <span class="invalid-feedback">
-                        <strong>{{ $errors->first('rh_id') }}</strong>
                     </span>
                     @endif
                 </div>
@@ -648,8 +648,8 @@
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_funtion_manual"
-                                name="funtion_manual" value="1" {{old('funtion_manual',
-                                $employees->funtion_manual ?? '') ? 'checked' : ''}}>
+                                name="funtion_manual" value="1" {{old('funtion_manual', $employees->funtion_manual ??
+                            '') ? 'checked' : ''}}>
                             <label for="yes_funtion_manual"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -657,10 +657,9 @@
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_funtion_manual"
-                                name="funtion_manual" value="0" {{old('funtion_manual',
-                                $employees->funtion_manual ?? '') == "0" ? 'checked' : ''}}>
-                            <label for="not_funtion_manual"
-                                class="custom-control-label">@lang('base_lang.not')</label>
+                                name="funtion_manual" value="0" {{old('funtion_manual', $employees->funtion_manual ??
+                            '') == "0" ? 'checked' : ''}}>
+                            <label for="not_funtion_manual" class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
                     </label>
                 </div>
