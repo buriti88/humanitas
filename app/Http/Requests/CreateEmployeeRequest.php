@@ -29,8 +29,8 @@ class CreateEmployeeRequest extends BasicModelRequest
             'title_id' => 'required',
             'habeas_data' => 'required',
             'identification_card' => 'required|string|max:191',
-            'expedition_date' => 'required',
-            'date_birth' => 'required',
+            'expedition_date' => 'required|date',
+            'date_birth' => 'required|date',
             'gender_id' => 'required',
             'telephone' => 'required|string|max:191',
             'address' => 'required|string|max:191',
@@ -59,9 +59,9 @@ class CreateEmployeeRequest extends BasicModelRequest
             'account_number' => 'required|string|max:191',
             'account_type_id' => 'required',
             'bank_id' => 'required',
-            'date_admission' => 'required',
+            'date_admission' => 'required|date',
             'concept_type_id' => 'required',
-            'date_end' => 'required',
+            'date_end' => 'required|date',
             'observations' => 'required|string|max:191',
 
         ];
