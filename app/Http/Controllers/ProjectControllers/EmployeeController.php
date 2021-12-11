@@ -69,7 +69,7 @@ class EmployeeController extends Controller
                 Session::flash('success', __('employees.created', ['name' => $employee->name . ' ' . $employee->last_name]));
                 DB::commit();
             } else {
-                Session::flash('error', __('employees.failed', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'crear']));
+                Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'crear']));
                 DB::rollBack();
             }
         } catch (\Exception $e) {
@@ -154,7 +154,7 @@ class EmployeeController extends Controller
             Session::flash('success', __('employees.deleted', ['name' => $employee->name . ' ' . $employee->last_name]));
         } catch (\Exception $e) {
             Log::error($e->getMessage());
-            Session::flash('error', __('employees.delete_error', ['name' => $employee->name . ' ' . $employee->last_name]));
+            Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name]));
         }
 
         return redirect()->route('employees.index');
