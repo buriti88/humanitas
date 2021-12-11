@@ -64,7 +64,8 @@ class UpdateEmployeeRequest extends CreateEmployeeRequest
             'date_admission' => 'sometimes|required',
             'concept_type_id' => 'sometimes|required',
             'date_end' => 'sometimes|required',
-            'observation' => 'nullable',
+            'observation' => 'sometimes|nullable',
+            'status' => 'sometimes|nullable'
         ];
     }
 }
