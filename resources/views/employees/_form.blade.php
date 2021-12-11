@@ -1,7 +1,7 @@
-<form role="form" method="POST" action="{{ url('/employees' . ($employees->id ? " /{$employees->id}" : '')) }}"
+<form role="form" method="POST" action="{{ url('/employees' . ($employee->id ? " /{$employee->id}" : '')) }}"
     enctype="multipart/form-data">
     @csrf
-    @if($employees->id)
+    @if($employee->id)
     @method('put')
     @endif
     <div class="card-body">
@@ -17,7 +17,7 @@
                         <div class="input-group-text"><i class="fas fa-user"></i></div>
                     </div>
                     <input id="name" type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                        name="name" value="{{ old('name', $employees->name ?? '') }}"
+                        name="name" value="{{ old('name', $employee->name ?? '') }}"
                         placeholder="@lang('employees.name')">
                     @if($errors->has('name'))
                     <span class="invalid-feedback">
@@ -35,7 +35,7 @@
                     </div>
                     <input id="last_name" type="text"
                         class="form-control {{ $errors->has('last_name') ? 'is-invalid' : '' }}" name="last_name"
-                        value="{{ old('last_name', $employees->last_name ?? '') }}"
+                        value="{{ old('last_name', $employee->last_name ?? '') }}"
                         placeholder="@lang('employees.last_name')">
                     @if($errors->has('last_name'))
                     <span class="invalid-feedback">
@@ -54,7 +54,7 @@
                     <input id="identification_card" type="text"
                         class="form-control {{ $errors->has('identification_card') ? 'is-invalid' : '' }}"
                         name="identification_card"
-                        value="{{ old('identification_card', $employees->identification_card ?? '') }}"
+                        value="{{ old('identification_card', $employee->identification_card ?? '') }}"
                         placeholder="@lang('employees.identification_card')">
                     @if($errors->has('identification_card'))
                     <span class="invalid-feedback">
@@ -74,7 +74,7 @@
                         class="form-control {{ $errors->has('expedition_date') ? 'is-invalid' : '' }} datepicker"
                         id="expedition_date" data-date-format="{{config('app.js_date_format')}}"
                         placeholder="@lang('employees.expedition_date')" autocomplete="off"
-                        value="{{ old('expedition_date', $employees->expedition_date ? format_date_time($employees->expedition_date, 'd/m/Y' ) : '')}}">
+                        value="{{ old('expedition_date', $employee->expedition_date ? format_date_time($employee->expedition_date, 'd/m/Y' ) : '')}}">
                     @if($errors->has('expedition_date'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('expedition_date') }}</strong>
@@ -93,7 +93,7 @@
                         class="form-control {{ $errors->has('date_birth') ? 'is-invalid' : '' }} datepicker"
                         id="date_birth" data-date-format="{{config('app.js_date_format')}}"
                         placeholder="@lang('employees.date_birth')" autocomplete="off"
-                        value="{{ old('date_birth', $employees->date_birth ? format_date_time($employees->date_birth, 'd/m/Y' ) : '')}}">
+                        value="{{ old('date_birth', $employee->date_birth ? format_date_time($employee->date_birth, 'd/m/Y' ) : '')}}">
                     @if($errors->has('date_birth'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('date_birth') }}</strong>
@@ -109,7 +109,7 @@
                         name="gender_id" id="gender_id">
                         <option value="">@lang('employees.select_gender')</option>
                         @foreach($genders as $gender)
-                        <option value="{{$gender->id}}" {{ $gender->id==old('gender_id', $employees->gender_id ?? '') ?
+                        <option value="{{$gender->id}}" {{ $gender->id==old('gender_id', $employee->gender_id ?? '') ?
                             'selected' : '' }}>
                             {{ $gender->option }}
                         </option>
@@ -130,7 +130,7 @@
                         name="rh_id" id="rh_id">
                         <option value="">@lang('employees.select_rh')</option>
                         @foreach($rh as $r)
-                        <option value="{{$r->id}}" {{ $r->id==old('rh_id', $employees->rh_id ?? '') ? 'selected' : ''
+                        <option value="{{$r->id}}" {{ $r->id==old('rh_id', $employee->rh_id ?? '') ? 'selected' : ''
                             }}>
                             {{ $r->option }}
                         </option>
@@ -152,7 +152,7 @@
                     </div>
                     <input id="telephone" type="text"
                         class="form-control {{ $errors->has('telephone') ? 'is-invalid' : '' }}" telephone="telephone"
-                        value="{{ old('telephone', $employees->telephone ?? '') }}"
+                        value="{{ old('telephone', $employee->telephone ?? '') }}"
                         placeholder="@lang('employees.telephone')">
                     @if($errors->has('telephone'))
                     <span class="invalid-feedback">
@@ -169,7 +169,7 @@
                         <div class="input-group-text"><i class="fas fa-envelope"></i></div>
                     </div>
                     <input id="email" type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                        email="email" value="{{ old('email', $employees->email ?? '') }}"
+                        email="email" value="{{ old('email', $employee->email ?? '') }}"
                         placeholder="@lang('employees.email')">
                     @if($errors->has('email'))
                     <span class="invalid-feedback">
@@ -187,7 +187,7 @@
                     </div>
                     <input id="address" type="text"
                         class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" address="address"
-                        value="{{ old('address', $employees->address ?? '') }}"
+                        value="{{ old('address', $employee->address ?? '') }}"
                         placeholder="@lang('employees.address')">
                     @if($errors->has('address'))
                     <span class="invalid-feedback">
@@ -205,7 +205,7 @@
                     </div>
                     <input id="neighborhood" type="text"
                         class="form-control {{ $errors->has('neighborhood') ? 'is-invalid' : '' }}"
-                        neighborhood="neighborhood" value="{{ old('neighborhood', $employees->neighborhood ?? '') }}"
+                        neighborhood="neighborhood" value="{{ old('neighborhood', $employee->neighborhood ?? '') }}"
                         placeholder="@lang('employees.neighborhood')">
                     @if($errors->has('neighborhood'))
                     <span class="invalid-feedback">
@@ -224,7 +224,7 @@
                         <option value="">@lang('employees.select_municipality')</option>
                         @foreach($municipalities as $municipality)
                         <option value="{{$municipality->id}}" {{ $municipality->id==old('municipality_id',
-                            $employees->municipality_id ?? '') ? 'selected' : '' }}>
+                            $employee->municipality_id ?? '') ? 'selected' : '' }}>
                             {{ $municipality->option }}
                         </option>
                         @endforeach
@@ -246,7 +246,7 @@
                         <option value="">@lang('employees.select_type_housing')</option>
                         @foreach($types_of_housing as $type_housing)
                         <option value="{{$type_housing->id}}" {{ $type_housing->id==old('type_housing_id',
-                            $employees->type_housing_id ?? '') ? 'selected' : '' }}>
+                            $employee->type_housing_id ?? '') ? 'selected' : '' }}>
                             {{ $type_housing->option }}
                         </option>
                         @endforeach
@@ -266,7 +266,7 @@
                         name="stratum_id" id="stratum_id">
                         <option value="">@lang('employees.select_stratum')</option>
                         @foreach($stratums as $stratum)
-                        <option value="{{$stratum->id}}" {{ $stratum->id==old('stratum_id', $employees->stratum_id ??
+                        <option value="{{$stratum->id}}" {{ $stratum->id==old('stratum_id', $employee->stratum_id ??
                             '') ? 'selected' : '' }}>
                             {{ $stratum->option }}
                         </option>
@@ -289,7 +289,7 @@
                         <option value="">@lang('employees.select_marital_status')</option>
                         @foreach($maritals_status as $marital_status)
                         <option value="{{$marital_status->id}}" {{ $marital_status->id==old('marital_status_id',
-                            $employees->marital_status_id ?? '') ? 'selected' : '' }}>
+                            $employee->marital_status_id ?? '') ? 'selected' : '' }}>
                             {{ $marital_status->option }}
                         </option>
                         @endforeach
@@ -310,7 +310,7 @@
                     </div>
                     <input id="number_children" type="text"
                         class="form-control {{ $errors->has('number_children') ? 'is-invalid' : '' }}"
-                        name="number_children" value="{{ old('number_children', $employees->number_children ?? '') }}"
+                        name="number_children" value="{{ old('number_children', $employee->number_children ?? '') }}"
                         placeholder="@lang('employees.number_children')">
                     @if($errors->has('number_children'))
                     <span class="invalid-feedback">
@@ -333,7 +333,7 @@
                         name="title_id" id="title_id">
                         <option value="">@lang('employees.select_title')</option>
                         @foreach($titles as $title)
-                        <option value="{{$title->id}}" {{ $title->id==old('title_id', $employees->title_id ?? '') ?
+                        <option value="{{$title->id}}" {{ $title->id==old('title_id', $employee->title_id ?? '') ?
                             'selected' : '' }}>
                             {{ $title->option }}
                         </option>
@@ -356,7 +356,7 @@
                         <option value="">@lang('employees.select_concept_type')</option>
                         @foreach($contract_types as $contract_types)
                         <option value="{{$contract_types->id}}" {{ $contract_types->id==old('concept_type_id',
-                            $employees->concept_type_id ?? '') ? 'selected' : '' }}>
+                            $employee->concept_type_id ?? '') ? 'selected' : '' }}>
                             {{ $contract_types->option }}
                         </option>
                         @endforeach
@@ -379,7 +379,7 @@
                         class="form-control {{ $errors->has('date_admission') ? 'is-invalid' : '' }} datepicker"
                         id="date_admission" data-date-format="{{config('app.js_date_format')}}"
                         placeholder="@lang('employees.date_admission')" autocomplete="off"
-                        value="{{ old('date_admission', $employees->date_admission ? format_date_time($employees->date_admission, 'd/m/Y' ) : '')}}">
+                        value="{{ old('date_admission', $employee->date_admission ? format_date_time($employee->date_admission, 'd/m/Y' ) : '')}}">
                     @if($errors->has('date_admission'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('date_admission') }}</strong>
@@ -398,7 +398,7 @@
                         class="form-control {{ $errors->has('date_end') ? 'is-invalid' : '' }} datepicker" id="date_end"
                         data-date-format="{{config('app.js_date_format')}}" placeholder="@lang('employees.date_end')"
                         autocomplete="off"
-                        value="{{ old('date_end', $employees->date_end ? format_date_time($employees->date_end, 'd/m/Y' ) : '')}}">
+                        value="{{ old('date_end', $employee->date_end ? format_date_time($employee->date_end, 'd/m/Y' ) : '')}}">
                     @if($errors->has('date_end'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('date_end') }}</strong>
@@ -414,7 +414,7 @@
                         name="health_id" id="health_id">
                         <option value="">@lang('employees.select_health')</option>
                         @foreach($health as $h)
-                        <option value="{{$h->id}}" {{ $h->id==old('health_id', $employees->health_id ?? '') ? 'selected'
+                        <option value="{{$h->id}}" {{ $h->id==old('health_id', $employee->health_id ?? '') ? 'selected'
                             : '' }}>
                             {{ $h->option }}
                         </option>
@@ -435,7 +435,7 @@
                         name="pension_id" id="pension_id">
                         <option value="">@lang('employees.select_pension')</option>
                         @foreach($pension as $p)
-                        <option value="{{$p->id}}" {{ $p->id==old('pension_id', $employees->pension_id ?? '') ?
+                        <option value="{{$p->id}}" {{ $p->id==old('pension_id', $employee->pension_id ?? '') ?
                             'selected' : '' }}>
                             {{ $p->option }}
                         </option>
@@ -456,7 +456,7 @@
                         name="arl_id" id="arl_id">
                         <option value="">@lang('employees.select_arl')</option>
                         @foreach($arl as $ar)
-                        <option value="{{$ar->id}}" {{ $ar->id==old('arl_id', $employees->arl_id ?? '') ? 'selected' :
+                        <option value="{{$ar->id}}" {{ $ar->id==old('arl_id', $employee->arl_id ?? '') ? 'selected' :
                             '' }}>
                             {{ $ar->option }}
                         </option>
@@ -480,7 +480,7 @@
                         class="form-control {{ $errors->has('advan_life_support') ? 'is-invalid' : '' }} datepicker"
                         id="advan_life_support" data-date-format="{{config('app.js_date_format')}}"
                         placeholder="@lang('employees.advan_life_support')" autocomplete="off"
-                        value="{{ old('advan_life_support', $employees->advan_life_support ? format_date_time($employees->advan_life_support, 'd/m/Y' ) : '')}}">
+                        value="{{ old('advan_life_support', $employee->advan_life_support ? format_date_time($employee->advan_life_support, 'd/m/Y' ) : '')}}">
                     @if($errors->has('advan_life_support'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('advan_life_support') }}</strong>
@@ -498,7 +498,7 @@
                         <option value="">@lang('employees.select_account_type')</option>
                         @foreach($account_types as $account_type)
                         <option value="{{$account_type->id}}" {{ $account_type->id==old('account_type_id',
-                            $employees->account_type_id ?? '') ? 'selected' : '' }}>
+                            $employee->account_type_id ?? '') ? 'selected' : '' }}>
                             {{ $account_type->option }}
                         </option>
                         @endforeach
@@ -518,7 +518,7 @@
                         name="bank_id" id="bank_id">
                         <option value="">@lang('employees.select_bank')</option>
                         @foreach($banks as $bank)
-                        <option value="{{$bank->id}}" {{ $bank->id==old('bank_id', $employees->bank_id ?? '') ?
+                        <option value="{{$bank->id}}" {{ $bank->id==old('bank_id', $employee->bank_id ?? '') ?
                             'selected' : '' }}>
                             {{ $bank->option }}
                         </option>
@@ -541,7 +541,7 @@
                     <input id="account_number" type="text"
                         class="form-control {{ $errors->has('account_number') ? 'is-invalid' : '' }}"
                         account_number="account_number"
-                        value="{{ old('account_number', $employees->account_number ?? '') }}"
+                        value="{{ old('account_number', $employee->account_number ?? '') }}"
                         placeholder="@lang('employees.account_number')">
                     @if($errors->has('account_number'))
                     <span class="invalid-feedback">
@@ -560,7 +560,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_certificate_degress"
                                 name="certificate_degress" value="1" {{old('certificate_degress',
-                                $employees->certificate_degress ?? '')
+                                $employee->certificate_degress ?? '')
                             ? 'checked' : ''}}>
                             <label for="yes_certificate_degress"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
@@ -570,7 +570,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_certificate_degress"
                                 name="certificate_degress" value="0" {{old('certificate_degress',
-                                $employees->certificate_degress ?? '')
+                                $employee->certificate_degress ?? '')
                             == "0" ? 'checked' : ''}}>
                             <label for="not_certificate_degress"
                                 class="custom-control-label">@lang('base_lang.not')</label>
@@ -591,7 +591,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_title_verification"
                                 name="title_verification" value="1" {{old('title_verification',
-                                $employees->title_verification ?? '') ? 'checked' : ''}}>
+                                $employee->title_verification ?? '') ? 'checked' : ''}}>
                             <label for="yes_title_verification"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -600,7 +600,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_title_verification"
                                 name="title_verification" value="0" {{old('title_verification',
-                                $employees->title_verification ?? '') == "0" ? 'checked' : ''}}>
+                                $employee->title_verification ?? '') == "0" ? 'checked' : ''}}>
                             <label for="not_title_verification"
                                 class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
@@ -620,7 +620,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_professional_card"
                                 name="professional_card" value="1" {{old('professional_card',
-                                $employees->professional_card ?? '') ? 'checked' : ''}}>
+                                $employee->professional_card ?? '') ? 'checked' : ''}}>
                             <label for="yes_professional_card"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -629,7 +629,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_professional_card"
                                 name="professional_card" value="0" {{old('professional_card',
-                                $employees->professional_card ?? '') == "0" ? 'checked' : ''}}>
+                                $employee->professional_card ?? '') == "0" ? 'checked' : ''}}>
                             <label for="not_professional_card"
                                 class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
@@ -648,7 +648,7 @@
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_funtion_manual"
-                                name="funtion_manual" value="1" {{old('funtion_manual', $employees->funtion_manual ??
+                                name="funtion_manual" value="1" {{old('funtion_manual', $employee->funtion_manual ??
                             '') ? 'checked' : ''}}>
                             <label for="yes_funtion_manual"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
@@ -657,7 +657,7 @@
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_funtion_manual"
-                                name="funtion_manual" value="0" {{old('funtion_manual', $employees->funtion_manual ??
+                                name="funtion_manual" value="0" {{old('funtion_manual', $employee->funtion_manual ??
                             '') == "0" ? 'checked' : ''}}>
                             <label for="not_funtion_manual" class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
@@ -677,7 +677,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_resolution_rethus"
                                 name="resolution_rethus" value="1" {{old('resolution_rethus',
-                                $employees->resolution_rethus ?? '') ? 'checked' : ''}}>
+                                $employee->resolution_rethus ?? '') ? 'checked' : ''}}>
                             <label for="yes_resolution_rethus"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -686,7 +686,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_resolution_rethus"
                                 name="resolution_rethus" value="0" {{old('resolution_rethus',
-                                $employees->resolution_rethus ?? '') == "0" ? 'checked' : ''}}>
+                                $employee->resolution_rethus ?? '') == "0" ? 'checked' : ''}}>
                             <label for="not_resolution_rethus"
                                 class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
@@ -706,7 +706,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_certific_victims_sexual_violence"
                                 name="certific_victims_sexual_violence" value="1"
-                                {{old('certific_victims_sexual_violence', $employees->certific_victims_sexual_violence
+                                {{old('certific_victims_sexual_violence', $employee->certific_victims_sexual_violence
                             ??
                             '') ? 'checked' : ''}}>
                             <label for="yes_certific_victims_sexual_violence"
@@ -717,7 +717,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_certific_victims_sexual_violence"
                                 name="certific_victims_sexual_violence" value="0"
-                                {{old('certific_victims_sexual_violence', $employees->certific_victims_sexual_violence
+                                {{old('certific_victims_sexual_violence', $employee->certific_victims_sexual_violence
                             ??
                             '') == "0" ? 'checked' : ''}}>
                             <label for="not_certific_victims_sexual_violence"
@@ -739,7 +739,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_civil_liability_policy"
                                 name="civil_liability_policy" value="1" {{old('civil_liability_policy',
-                                $employees->civil_liability_policy ?? '') ? 'checked' : ''}}>
+                                $employee->civil_liability_policy ?? '') ? 'checked' : ''}}>
                             <label for="yes_civil_liability_policy"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -748,7 +748,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_civil_liability_policy"
                                 name="civil_liability_policy" value="0" {{old('civil_liability_policy',
-                                $employees->civil_liability_policy ?? '') == "0" ? 'checked' : ''}}>
+                                $employee->civil_liability_policy ?? '') == "0" ? 'checked' : ''}}>
                             <label for="not_civil_liability_policy"
                                 class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
@@ -768,7 +768,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_court_ethics_certific"
                                 name="court_ethics_certific" value="1" {{old('court_ethics_certific',
-                                $employees->court_ethics_certific ?? '') ? 'checked' : ''}}>
+                                $employee->court_ethics_certific ?? '') ? 'checked' : ''}}>
                             <label for="yes_court_ethics_certific"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -777,7 +777,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_court_ethics_certific"
                                 name="court_ethics_certific" value="0" {{old('court_ethics_certific',
-                                $employees->court_ethics_certific ?? '') == "0" ? 'checked' : ''}}>
+                                $employee->court_ethics_certific ?? '') == "0" ? 'checked' : ''}}>
                             <label for="not_court_ethics_certific"
                                 class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
@@ -797,7 +797,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_card_protect_validity"
                                 name="card_protect_validity" value="1" {{old('card_protect_validity',
-                                $employees->card_protect_validity ?? '') ? 'checked' : ''}}>
+                                $employee->card_protect_validity ?? '') ? 'checked' : ''}}>
                             <label for="yes_card_protect_validity"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -806,7 +806,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_card_protect_validity"
                                 name="card_protect_validity" value="0" {{old('card_protect_validity',
-                                $employees->card_protect_validity ?? '') == "0" ? 'checked' : ''}}>
+                                $employee->card_protect_validity ?? '') == "0" ? 'checked' : ''}}>
                             <label for="not_card_protect_validity"
                                 class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
@@ -826,7 +826,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_occupational_exam"
                                 name="occupational_exam" value="1" {{old('occupational_exam',
-                                $employees->occupational_exam ?? '') ? 'checked' : ''}}>
+                                $employee->occupational_exam ?? '') ? 'checked' : ''}}>
                             <label for="yes_occupational_exam"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -835,7 +835,7 @@
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_occupational_exam"
                                 name="occupational_exam" value="0" {{old('occupational_exam',
-                                $employees->occupational_exam ?? '') == "0" ? 'checked' : ''}}>
+                                $employee->occupational_exam ?? '') == "0" ? 'checked' : ''}}>
                             <label for="not_occupational_exam"
                                 class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
@@ -855,7 +855,7 @@
                 <div class="input-group input-group-sm mb-2">
                     <textarea class="form-control {{ $errors->has('observation') ? 'is-invalid' : '' }}"
                         name="observation"
-                        placeholder="@lang('employees.observation')">{{ old('observation', $employees->observation ?? '') }} </textarea>
+                        placeholder="@lang('employees.observation')">{{ old('observation', $employee->observation ?? '') }} </textarea>
                     @if($errors->has('observation'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('observation') }}</strong>
@@ -869,7 +869,7 @@
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="yes_habeas_data" name="habeas_data"
-                                value="1" {{old('habeas_data', $employees->habeas_data ?? '') ? 'checked' : ''}}>
+                                value="1" {{old('habeas_data', $employee->habeas_data ?? '') ? 'checked' : ''}}>
                             <label for="yes_habeas_data"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
@@ -877,7 +877,7 @@
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
                             <input class="custom-control-input" type="radio" id="not_habeas_data" name="habeas_data"
-                                value="0" {{old('habeas_data', $employees->habeas_data ?? '') == "0" ? 'checked' :
+                                value="0" {{old('habeas_data', $employee->habeas_data ?? '') == "0" ? 'checked' :
                             ''}}>
                             <label for="not_habeas_data" class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
