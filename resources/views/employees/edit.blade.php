@@ -4,7 +4,8 @@
 
 @section('title_page')
 <i class="fas fa-user"></i>&nbsp;@lang('base_lang.employees')&nbsp;
-<i class="fa fa-caret-right"></i>&nbsp;@lang('base_lang.edit')
+<i class="fa fa-caret-right"></i>&nbsp;@lang('base_lang.edit')&nbsp;
+<i class="fa fa-caret-right"></i>&nbsp;{{($employee->name ?? '') . ' ' . ($employee->last_name ?? '')}}
 @endsection
 
 @section('content_page')
@@ -16,7 +17,7 @@
             @permission(['view_employees', 'all_employees'])
             <div class="mb-2">
                 <a href="{{ route('employees.index') }}" class="btn btn-sm btn-primary">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-lg fa-user"></i>
                     @lang('employees.view_employees')
                 </a>
             </div>

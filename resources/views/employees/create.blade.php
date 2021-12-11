@@ -16,7 +16,7 @@
             @permission(['view_employees', 'all_employees'])
             <div class="mb-2">
                 <a href="{{ route('employees.index') }}" class="btn btn-sm btn-primary">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-lg fa-user"></i>
                     @lang('employees.view_employees')
                 </a>
             </div>

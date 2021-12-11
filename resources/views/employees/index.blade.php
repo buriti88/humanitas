@@ -36,7 +36,7 @@
             @permission(['edit_employees', 'all_employees'])
             <div class="button-w-100 pb-1">
                 <a href="{{ route('employees.create') }}" class="btn btn-sm btn-primary mb-1">
-                    <i class="fa fa-lg fa-fw fa-plus"></i>&nbsp;@lang('employees.new_employee')
+                    <i class="fa fa-lg fa-plus"></i>&nbsp;@lang('employees.new_employee')
                 </a>
             </div>
             @endpermission
