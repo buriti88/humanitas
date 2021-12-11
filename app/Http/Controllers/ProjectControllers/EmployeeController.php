@@ -68,13 +68,11 @@ class EmployeeController extends Controller
             if ($employee->save()) {
                 Session::flash('success', __('employees.created', ['name' => $employee->name . ' ' . $employee->last_name]));
                 DB::commit();
-            } else {
-                Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'crear']));
-                DB::rollBack();
             }
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error($e->getMessage());
+            Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'crear']));
         }
 
         return redirect()->route('employees.index');
@@ -127,13 +125,11 @@ class EmployeeController extends Controller
             if ($employee->update($request->validated())) {
                 Session::flash('success', __('employees.updated', ['name' => $employee->name . ' ' . $employee->last_name]));
                 DB::commit();
-            } else {
-                Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'actualizar']));
-                DB::rollBack();
             }
         } catch (\Exception $e) {
             DB::rollBack();
             Log::error($e->getMessage());
+            Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'actualizar']));
         }
 
         return redirect()->route('employees.index');
