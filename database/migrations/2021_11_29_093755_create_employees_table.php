@@ -53,7 +53,7 @@ class CreateEmployeesTable extends Migration
             $table->string('date_admission')->nullable();
             $table->unsignedBigInteger('concept_type_id')->nullable();
             $table->string('date_end')->nullable();
-            $table->text('observations')->nullable();
+            $table->text('observation')->nullable();
             $table->boolean('status')->default(1)->nullable();
             $table->timestamps();
 

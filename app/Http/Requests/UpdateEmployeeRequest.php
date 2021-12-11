@@ -44,8 +44,8 @@ class UpdateEmployeeRequest extends CreateEmployeeRequest
             'rh_id' => 'sometimes|required',
             'marital_status_id' => 'sometimes|required',
             'number_children' => 'sometimes|required|numeric',
-            'funtion_manual' => 'sometimes|required',
-            'certificate_degress' => 'sometimes|required',
+            'function_manual' => 'sometimes|required',
+            'certificate_degrees' => 'sometimes|required',
             'title_verification' => 'sometimes|required',
             'resolution_rethus' => 'sometimes|required',
             'professional_card' => 'sometimes|required',
@@ -64,7 +64,7 @@ class UpdateEmployeeRequest extends CreateEmployeeRequest
             'date_admission' => 'sometimes|required',
             'concept_type_id' => 'sometimes|required',
             'date_end' => 'sometimes|required',
-            'observations' => 'nullable',
+            'observation' => 'nullable',
         ];
     }
 }

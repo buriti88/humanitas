@@ -45,6 +45,7 @@ class Employee extends Model
         'resolution_rethus',
         'professional_card',
         'advan_life_support',
+        'certificate_degrees',
         'certific_victims_sexual_violence',
         'court_ethics_certific',
         'card_protect_validity',
@@ -53,12 +54,13 @@ class Employee extends Model
         'health_id',
         'pension_id',
         'arl_id',
+        'account_type_id',
         'account_number',
         'bank_id',
         'date_admission',
         'concept_type_id',
         'date_end',
-        'observations',
+        'observation',
         'status',
     ];
 
@@ -109,7 +111,7 @@ class Employee extends Model
             'arl' => PList::status()->Options('arl')->get(),
             'account_types' => PList::status()->Options('account_types')->get(),
             'banks' => PList::status()->Options('banks')->get(),
-            'contract_types' => PList::status()->Options('contract_types')->get(),
+            'concept_types' => PList::status()->Options('concept_types')->get(),
             'rh' => PList::status()->Options('rh')->get(),
         ];
 
@@ -171,9 +173,9 @@ class Employee extends Model
         return $this->belongsTo(Plist::class, 'bank_id');
     }
 
-    public function contract_type()
+    public function concept_type()
     {
-        return $this->belongsTo(Plist::class, 'contract_type_id');
+        return $this->belongsTo(Plist::class, 'concept_type_id');
     }
 
     public function rh()

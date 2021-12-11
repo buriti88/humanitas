@@ -1,4 +1,4 @@
-<form role="form" method="POST" action="{{ url('/employees' . ($employee->id ? " /{$employee->id}" : '')) }}"
+<form role="form" method="POST" action="{{ url('/employees/' . ($employee->id ? " {$employee->id}" : '')) }}"
     enctype="multipart/form-data">
     @csrf
     @if($employee->id)
@@ -187,8 +187,7 @@
                     </div>
                     <input id="address" type="text"
                         class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" name="address"
-                        value="{{ old('address', $employee->address ?? '') }}"
-                        placeholder="@lang('employees.address')">
+                        value="{{ old('address', $employee->address ?? '') }}" placeholder="@lang('employees.address')">
                     @if($errors->has('address'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('address') }}</strong>
@@ -204,8 +203,8 @@
                         <div class="input-group-text"><i class="fas fa-location-arrow"></i></div>
                     </div>
                     <input id="neighborhood" type="text"
-                        class="form-control {{ $errors->has('neighborhood') ? 'is-invalid' : '' }}"
-                        name="neighborhood" value="{{ old('neighborhood', $employee->neighborhood ?? '') }}"
+                        class="form-control {{ $errors->has('neighborhood') ? 'is-invalid' : '' }}" name="neighborhood"
+                        value="{{ old('neighborhood', $employee->neighborhood ?? '') }}"
                         placeholder="@lang('employees.neighborhood')">
                     @if($errors->has('neighborhood'))
                     <span class="invalid-feedback">
@@ -354,10 +353,10 @@
                         class="form-control-sm select2 {{ $errors->has('concept_type_id') ? 'is-invalid' : '' }} w-100"
                         name="concept_type_id" id="concept_type_id">
                         <option value="">@lang('employees.select_concept_type')</option>
-                        @foreach($contract_types as $contract_types)
-                        <option value="{{$contract_types->id}}" {{ $contract_types->id==old('concept_type_id',
+                        @foreach($concept_types as $concept_type)
+                        <option value="{{$concept_type->id}}" {{ $concept_type->id==old('concept_type_id',
                             $employee->concept_type_id ?? '') ? 'selected' : '' }}>
-                            {{ $contract_types->option }}
+                            {{ $concept_type->option }}
                         </option>
                         @endforeach
                     </select>
@@ -540,8 +539,7 @@
                     </div>
                     <input id="account_number" type="text"
                         class="form-control {{ $errors->has('account_number') ? 'is-invalid' : '' }}"
-                        name="account_number"
-                        value="{{ old('account_number', $employee->account_number ?? '') }}"
+                        name="account_number" value="{{ old('account_number', $employee->account_number ?? '') }}"
                         placeholder="@lang('employees.account_number')">
                     @if($errors->has('account_number'))
                     <span class="invalid-feedback">
@@ -554,32 +552,32 @@
 
         <div class="row">
             <div class="col-sm-3">
-                <label>*@lang('employees.certificate_degress')</label>
-                <div class="form-group {{ $errors->has('certificate_degress') ? 'is-invalid' : '' }} mb-2">
+                <label>*@lang('employees.certificate_degrees')</label>
+                <div class="form-group {{ $errors->has('certificate_degrees') ? 'is-invalid' : '' }} mb-2">
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
-                            <input class="custom-control-input" type="radio" id="yes_certificate_degress"
-                                name="certificate_degress" value="1" {{old('certificate_degress',
-                                $employee->certificate_degress ?? '')
+                            <input class="custom-control-input" type="radio" id="yes_certificate_degrees"
+                                name="certificate_degrees" value="1" {{old('certificate_degrees',
+                                $employee->certificate_degrees ?? '')
                             ? 'checked' : ''}}>
-                            <label for="yes_certificate_degress"
+                            <label for="yes_certificate_degrees"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
                     </label>
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
-                            <input class="custom-control-input" type="radio" id="not_certificate_degress"
-                                name="certificate_degress" value="0" {{old('certificate_degress',
-                                $employee->certificate_degress ?? '')
+                            <input class="custom-control-input" type="radio" id="not_certificate_degrees"
+                                name="certificate_degrees" value="0" {{old('certificate_degrees',
+                                $employee->certificate_degrees ?? '')
                             == "0" ? 'checked' : ''}}>
-                            <label for="not_certificate_degress"
+                            <label for="not_certificate_degrees"
                                 class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
                     </label>
                 </div>
-                @if($errors->has('certificate_degress'))
+                @if($errors->has('certificate_degrees'))
                 <span class="invalid-feedback">
-                    <strong>{{ $errors->first('certificate_degress') }}</strong>
+                    <strong>{{ $errors->first('certificate_degrees') }}</strong>
                 </span>
                 @endif
             </div>
@@ -643,29 +641,29 @@
             </div>
 
             <div class="col-sm-2">
-                <label>*@lang('employees.funtion_manual')</label>
-                <div class="form-group {{ $errors->has('funtion_manual') ? 'is-invalid' : '' }} mb-2">
+                <label>*@lang('employees.function_manual')</label>
+                <div class="form-group {{ $errors->has('function_manual') ? 'is-invalid' : '' }} mb-2">
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
-                            <input class="custom-control-input" type="radio" id="yes_funtion_manual"
-                                name="funtion_manual" value="1" {{old('funtion_manual', $employee->funtion_manual ??
+                            <input class="custom-control-input" type="radio" id="yes_function_manual"
+                                name="function_manual" value="1" {{old('function_manual', $employee->function_manual ??
                             '') ? 'checked' : ''}}>
-                            <label for="yes_funtion_manual"
+                            <label for="yes_function_manual"
                                 class="custom-control-label mr-2">@lang('base_lang.yes')</label>
                         </div>
                     </label>
                     <label class="radio-inline">
                         <div class="custom-control custom-radio radio-inline">
-                            <input class="custom-control-input" type="radio" id="not_funtion_manual"
-                                name="funtion_manual" value="0" {{old('funtion_manual', $employee->funtion_manual ??
+                            <input class="custom-control-input" type="radio" id="not_function_manual"
+                                name="function_manual" value="0" {{old('function_manual', $employee->function_manual ??
                             '') == "0" ? 'checked' : ''}}>
-                            <label for="not_funtion_manual" class="custom-control-label">@lang('base_lang.not')</label>
+                            <label for="not_function_manual" class="custom-control-label">@lang('base_lang.not')</label>
                         </div>
                     </label>
                 </div>
-                @if($errors->has('funtion_manual'))
+                @if($errors->has('function_manual'))
                 <span class="invalid-feedback">
-                    <strong>{{ $errors->first('funtion_manual') }}</strong>
+                    <strong>{{ $errors->first('function_manual') }}</strong>
                 </span>
                 @endif
             </div>

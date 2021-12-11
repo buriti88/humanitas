@@ -42,8 +42,8 @@ class CreateEmployeeRequest extends BasicModelRequest
             'rh_id' => 'required',
             'marital_status_id' => 'required',
             'number_children' => 'required|numeric',
-            'funtion_manual' => 'required',
-            'certificate_degress' => 'required',
+            'function_manual' => 'required',
+            'certificate_degrees' => 'required',
             'title_verification' => 'required',
             'resolution_rethus' => 'required',
             'professional_card' => 'required',
@@ -62,7 +62,7 @@ class CreateEmployeeRequest extends BasicModelRequest
             'date_admission' => 'required',
             'concept_type_id' => 'required',
             'date_end' => 'required',
-            'observations' => 'nullable',
+            'observation' => 'nullable',
         ];
     }
 

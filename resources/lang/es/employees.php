@@ -5,10 +5,11 @@ return [
     'created' => 'El Empleado :name ha sido creado con éxito.',
     'updated' => 'El Empleado :name ha sido actualizado con éxito.',
     'deleted' => 'El Empleado :name ha sido eliminado con éxito.',
-    'failed' => 'Error al :action el empleado',
+    'error' => 'Error al :action el empleado',
 
     //Actions button
     'new_employee' => 'Nuevo Empleado',
+    'edit_employee' => 'Editar Empleado',
     'view_employees' => 'Ver Empleados',
 
     //Module titles
@@ -34,8 +35,8 @@ return [
     'rh_id' => 'RH',
     'marital_status_id' => 'Estado civil',
     'number_children' => 'Numero de hijos',
-    'funtion_manual' => 'Manual de funciones',
-    'certificate_degress' => 'Acta de grados',
+    'function_manual' => 'Manual de funciones',
+    'certificate_degrees' => 'Acta de grados',
     'title_verification' => 'Verificación de título',
     'resolution_rethus' => 'Resolución o Rethus',
     'professional_card' => 'Tarjeta profesional',

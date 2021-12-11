@@ -20,7 +20,7 @@ return [
         'arl' => 'ARL',
         'account_types' => 'Tipos de Cuenta',
         'banks' => 'Bancos',
-        'contract_types' => 'Concepto del Contrato',
+        'concept_types' => 'Concepto del Contrato',
         'rh' => 'Rh',
 
     ],
@@ -104,7 +104,7 @@ return [
             'Itau',
             'Banco de Bogotá'
         ],
-        'contract_types' => [
+        'concept_types' => [
             'Prestación de servicios',
             'Término fijo',
             'Término Indefinido',
