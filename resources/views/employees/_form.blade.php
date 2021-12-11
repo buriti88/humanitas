@@ -74,7 +74,7 @@
                         class="form-control {{ $errors->has('expedition_date') ? 'is-invalid' : '' }} datepicker"
                         id="expedition_date" data-date-format="{{config('app.js_date_format')}}"
                         placeholder="@lang('employees.expedition_date')" autocomplete="off"
-                        value="{{ old('expedition_date', $employee->expedition_date ? format_date_time($employee->expedition_date, 'd/m/Y' ) : '')}}">
+                        value="{{ old('expedition_date', $employee->expedition_date ? ($employee->expedition_date ) : '')}}">
                     @if($errors->has('expedition_date'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('expedition_date') }}</strong>
@@ -93,7 +93,7 @@
                         class="form-control {{ $errors->has('date_birth') ? 'is-invalid' : '' }} datepicker"
                         id="date_birth" data-date-format="{{config('app.js_date_format')}}"
                         placeholder="@lang('employees.date_birth')" autocomplete="off"
-                        value="{{ old('date_birth', $employee->date_birth ? format_date_time($employee->date_birth, 'd/m/Y' ) : '')}}">
+                        value="{{ old('date_birth', $employee->date_birth ? ($employee->date_birth ) : '')}}">
                     @if($errors->has('date_birth'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('date_birth') }}</strong>
@@ -151,7 +151,7 @@
                         <div class="input-group-text"><i class="fas fa-phone"></i></div>
                     </div>
                     <input id="telephone" type="text"
-                        class="form-control {{ $errors->has('telephone') ? 'is-invalid' : '' }}" telephone="telephone"
+                        class="form-control {{ $errors->has('telephone') ? 'is-invalid' : '' }}" name="telephone"
                         value="{{ old('telephone', $employee->telephone ?? '') }}"
                         placeholder="@lang('employees.telephone')">
                     @if($errors->has('telephone'))
@@ -169,7 +169,7 @@
                         <div class="input-group-text"><i class="fas fa-envelope"></i></div>
                     </div>
                     <input id="email" type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                        email="email" value="{{ old('email', $employee->email ?? '') }}"
+                        name="email" value="{{ old('email', $employee->email ?? '') }}"
                         placeholder="@lang('employees.email')">
                     @if($errors->has('email'))
                     <span class="invalid-feedback">
@@ -186,7 +186,7 @@
                         <div class="input-group-text"><i class="fas fa-map-marker"></i></div>
                     </div>
                     <input id="address" type="text"
-                        class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" address="address"
+                        class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" name="address"
                         value="{{ old('address', $employee->address ?? '') }}"
                         placeholder="@lang('employees.address')">
                     @if($errors->has('address'))
@@ -205,7 +205,7 @@
                     </div>
                     <input id="neighborhood" type="text"
                         class="form-control {{ $errors->has('neighborhood') ? 'is-invalid' : '' }}"
-                        neighborhood="neighborhood" value="{{ old('neighborhood', $employee->neighborhood ?? '') }}"
+                        name="neighborhood" value="{{ old('neighborhood', $employee->neighborhood ?? '') }}"
                         placeholder="@lang('employees.neighborhood')">
                     @if($errors->has('neighborhood'))
                     <span class="invalid-feedback">
@@ -379,7 +379,7 @@
                         class="form-control {{ $errors->has('date_admission') ? 'is-invalid' : '' }} datepicker"
                         id="date_admission" data-date-format="{{config('app.js_date_format')}}"
                         placeholder="@lang('employees.date_admission')" autocomplete="off"
-                        value="{{ old('date_admission', $employee->date_admission ? format_date_time($employee->date_admission, 'd/m/Y' ) : '')}}">
+                        value="{{ old('date_admission', $employee->date_admission ? ($employee->date_admission ) : '')}}">
                     @if($errors->has('date_admission'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('date_admission') }}</strong>
@@ -398,7 +398,7 @@
                         class="form-control {{ $errors->has('date_end') ? 'is-invalid' : '' }} datepicker" id="date_end"
                         data-date-format="{{config('app.js_date_format')}}" placeholder="@lang('employees.date_end')"
                         autocomplete="off"
-                        value="{{ old('date_end', $employee->date_end ? format_date_time($employee->date_end, 'd/m/Y' ) : '')}}">
+                        value="{{ old('date_end', $employee->date_end ? ($employee->date_end ) : '')}}">
                     @if($errors->has('date_end'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('date_end') }}</strong>
@@ -480,7 +480,7 @@
                         class="form-control {{ $errors->has('advan_life_support') ? 'is-invalid' : '' }} datepicker"
                         id="advan_life_support" data-date-format="{{config('app.js_date_format')}}"
                         placeholder="@lang('employees.advan_life_support')" autocomplete="off"
-                        value="{{ old('advan_life_support', $employee->advan_life_support ? format_date_time($employee->advan_life_support, 'd/m/Y' ) : '')}}">
+                        value="{{ old('advan_life_support', $employee->advan_life_support ? ($employee->advan_life_support ) : '')}}">
                     @if($errors->has('advan_life_support'))
                     <span class="invalid-feedback">
                         <strong>{{ $errors->first('advan_life_support') }}</strong>
@@ -540,7 +540,7 @@
                     </div>
                     <input id="account_number" type="text"
                         class="form-control {{ $errors->has('account_number') ? 'is-invalid' : '' }}"
-                        account_number="account_number"
+                        name="account_number"
                         value="{{ old('account_number', $employee->account_number ?? '') }}"
                         placeholder="@lang('employees.account_number')">
                     @if($errors->has('account_number'))

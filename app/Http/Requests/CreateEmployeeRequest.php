@@ -29,8 +29,8 @@ class CreateEmployeeRequest extends BasicModelRequest
             'title_id' => 'required',
             'habeas_data' => 'required',
             'identification_card' => 'required|numeric|digits_between:4,10',
-            'expedition_date' => 'required|date',
-            'date_birth' => 'required|date',
+            'expedition_date' => 'required',
+            'date_birth' => 'required',
             'gender_id' => 'required',
             'telephone' => 'required|numeric|digits_between:7,10',
             'address' => 'required|string|max:191',
@@ -59,9 +59,9 @@ class CreateEmployeeRequest extends BasicModelRequest
             'account_number' => 'required|numeric',
             'account_type_id' => 'required',
             'bank_id' => 'required',
-            'date_admission' => 'required|date',
+            'date_admission' => 'required',
             'concept_type_id' => 'required',
-            'date_end' => 'required|date',
+            'date_end' => 'required',
             'observations' => 'nullable',
         ];
     }

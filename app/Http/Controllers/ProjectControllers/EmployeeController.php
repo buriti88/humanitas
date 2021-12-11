@@ -77,7 +77,7 @@ class EmployeeController extends Controller
             Log::error($e->getMessage());
         }
 
-        return redirect()->route('employees.show');
+        return redirect()->route('employees.index');
     }
 
     /**
@@ -136,7 +136,7 @@ class EmployeeController extends Controller
             Log::error($e->getMessage());
         }
 
-        return redirect()->route('employees.show');
+        return redirect()->route('employees.index');
     }
 
     /**

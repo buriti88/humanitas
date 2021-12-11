@@ -51,7 +51,7 @@ class CreateEmployeesTable extends Migration
             $table->unsignedBigInteger('account_type_id')->nullable();
             $table->unsignedBigInteger('bank_id')->nullable();
             $table->string('date_admission')->nullable();
-            $table->unsignedBigInteger('contract_type_id')->nullable();
+            $table->unsignedBigInteger('concept_type_id')->nullable();
             $table->string('date_end')->nullable();
             $table->text('observations')->nullable();
             $table->boolean('status')->default(1)->nullable();
@@ -69,7 +69,7 @@ class CreateEmployeesTable extends Migration
             $table->foreign('arl_id')->references('id')->on('lists');
             $table->foreign('account_type_id')->references('id')->on('lists');
             $table->foreign('bank_id')->references('id')->on('lists');
-            $table->foreign('contract_type_id')->references('id')->on('lists');
+            $table->foreign('concept_type_id')->references('id')->on('lists');
             $table->foreign('rh_id')->references('id')->on('lists');
 
 

@@ -31,8 +31,8 @@ class UpdateEmployeeRequest extends CreateEmployeeRequest
             'title_id' => 'sometimes|required',
             'habeas_data' => 'sometimes|required',
             'identification_card' => 'sometimes|required|numeric|digits_between:4,10',
-            'expedition_date' => 'sometimes|required|date',
-            'date_birth' => 'sometimes|required|date',
+            'expedition_date' => 'sometimes|required',
+            'date_birth' => 'sometimes|required',
             'gender_id' => 'sometimes|required',
             'telephone' => 'sometimes|required|numeric|digits_between:7,10',
             'address' => 'sometimes|required|string|max:191',
@@ -61,9 +61,9 @@ class UpdateEmployeeRequest extends CreateEmployeeRequest
             'account_number' => 'sometimes|required|numeric',
             'account_type_id' => 'sometimes|required',
             'bank_id' => 'sometimes|required',
-            'date_admission' => 'sometimes|required|date',
+            'date_admission' => 'sometimes|required',
             'concept_type_id' => 'sometimes|required',
-            'date_end' => 'sometimes|required|date',
+            'date_end' => 'sometimes|required',
             'observations' => 'nullable',
         ];
     }
