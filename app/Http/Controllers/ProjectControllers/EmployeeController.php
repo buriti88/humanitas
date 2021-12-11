@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ProjectControllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateEmployeeRequest;
+use App\Http\Requests\UpdateEmployeeRequest;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -44,10 +45,10 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Employee $employees)
+    public function create(Employee $employee)
     {
         return view("employees.create", [
-            'employees' => $employees,
+            'employee' => $employee,
         ] + Employee::getArrayList());
     }
 
@@ -62,13 +63,13 @@ class EmployeeController extends Controller
         try {
             DB::beginTransaction();
 
-            $employees = new Employee($request->validated());
+            $employee = new Employee($request->validated());
 
-            if ($employees->save()) {
-                Session::flash('success', __('employees.created', ['name' => $employees->name . ' ' . $employees->last_name]));
+            if ($employee->save()) {
+                Session::flash('success', __('employees.created', ['name' => $employee->name . ' ' . $employee->last_name]));
                 DB::commit();
             } else {
-                Session::flash('error', __('employees.error', ['name' => $employees->name . ' ' . $employees->last_name, 'action' => 'crear']));
+                Session::flash('error', __('employees.failed', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'crear']));
                 DB::rollBack();
             }
         } catch (\Exception $e) {
@@ -76,7 +77,7 @@ class EmployeeController extends Controller
             Log::error($e->getMessage());
         }
 
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.show');
     }
 
     /**
@@ -87,7 +88,11 @@ class EmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+        $employee = Employee::findOrFail($id);
+
+        return view('employees.detail', [
+            'employee' => $employee,
+        ]);
     }
 
     /**
@@ -98,11 +103,11 @@ class EmployeeController extends Controller
      */
     public function edit($id)
     {
-        $employees = Employee::findOrFail($id);
+        $employee = Employee::findOrFail($id);
 
         return view("employees.edit", [
-            'employees' => $employees,
-        ]);
+            'employee' => $employee,
+        ] + Employee::getArrayList());
     }
 
     /**
@@ -112,9 +117,26 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateEmployeeRequest $request, $id)
     {
-        //
+        try {
+            DB::beginTransaction();
+
+            $employee = Employee::findOrFail($id);
+
+            if ($employee->update($request->validated())) {
+                Session::flash('success', __('employees.updated', ['name' => $employee->name . ' ' . $employee->last_name]));
+                DB::commit();
+            } else {
+                Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'actualizar']));
+                DB::rollBack();
+            }
+        } catch (\Exception $e) {
+            DB::rollBack();
+            Log::error($e->getMessage());
+        }
+
+        return redirect()->route('employees.show');
     }
 
     /**
@@ -125,6 +147,16 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $employee = Employee::findOrFail($id);
+
+        try {
+            $employee->delete();
+            Session::flash('success', __('employees.deleted', ['name' => $employee->name . ' ' . $employee->last_name]));
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            Session::flash('error', __('employees.delete_error', ['name' => $employee->name . ' ' . $employee->last_name]));
+        }
+
+        return redirect()->route('employees.index');
     }
 }
