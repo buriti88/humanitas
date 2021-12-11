@@ -34,6 +34,8 @@
 
             <div class="panel panel-default">
                 <div class="panel-body body_form">
+
+                    {{-- Sección información personal --}}
                     <div class="w-100 title-module">
                         @lang('employees.personal_information')
                     </div>
@@ -65,6 +67,7 @@
                         </table>
                     </div>
 
+                    {{-- Sección información laboral --}}
                     <div class="w-100 title-module">
                         @lang('employees.laboral_information')
                     </div>
