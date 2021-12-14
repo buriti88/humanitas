@@ -215,61 +215,63 @@
                                     
                                     <td><b>@lang('employees.title_verification')</b></td>
                                     <td class="background_color">
-                                        {{$employee->title_verification ?? ''}}
+                                        {{$employee->title_verification ? 'Sí' : 'No'}}
                                     </td>
 
                                     <td><b>@lang('employees.professional_card')</b></td>
                                     <td class="background_color">
-                                        {{$employee->professional_card ?? ''}}
+                                        {{$employee->professional_card ? 'Sí' : 'No'}}
                                     </td>
 
                                     <td><b>@lang('employees.function_manual')</b></td>
                                     <td class="background_color">
-                                        {{$employee->function_manual ?? ''}}
+                                        {{$employee->function_manual ? 'Sí' : 'No'}}
                                     </td>
 
                                     <td><b>@lang('employees.resolution_rethus')</b></td>
                                     <td class="background_color">
-                                        {{$employee->resolution_rethus ?? ''}}
+                                        {{$employee->resolution_rethus ? 'Sí' : 'No'}}
                                     </td>
                                 </tr>
 
                                 <tr>
                                     <td><b>@lang('employees.certific_victims_sexual_violence')</b></td>
                                     <td class="background_color">
-                                        {{$employee->certific_victims_sexual_violence ?? ''}}
+                                        {{$employee->certific_victims_sexual_violence ? 'Sí' : 'No'}}
                                     </td>
                                     
                                     <td><b>@lang('employees.civil_liability_policy')</b></td>
                                     <td class="background_color">
-                                        {{$employee->civil_liability_policy ?? ''}}
+                                        {{$employee->civil_liability_policy ? 'Sí' : 'No'}}
                                     </td>
 
                                     <td><b>@lang('employees.court_ethics_certific')</b></td>
                                     <td class="background_color">
-                                        {{$employee->court_ethics_certific ?? ''}}
+                                        {{$employee->court_ethics_certific ? 'Sí' : 'No'}}
                                     </td>
 
                                     <td><b>@lang('employees.card_protect_validity')</b></td>
                                     <td class="background_color">
-                                        {{$employee->card_protect_validity ?? ''}}
+                                        {{$employee->card_protect_validity ? 'Sí' : 'No'}}
                                     </td>
 
                                     <td><b>@lang('employees.occupational_exam')</b></td>
                                     <td class="background_color">
-                                        {{$employee->occupational_exam ?? ''}}
+                                        {{$employee->occupational_exam ? 'Sí' : 'No'}}
                                     </td>                                    
                                 </tr>
 
                                 <tr>
+                                    <td><b>@lang('employees.habeas_data')</b></td>
+                                    <td class="background_color">
+                                        {{$employee->habeas_data ? 'Sí' : 'No'}}
+                                    </td>
+                                    
                                     <td><b>@lang('employees.observation')</b></td>
                                     <td class="background_color" colspan="7">
                                         {{$employee->observation ?? ''}}
                                     </td>
-                                    <td><b>@lang('employees.habeas_data')</b></td>
-                                    <td class="background_color">
-                                        {{$employee->habeas_data ?? ''}}
-                                    </td>
+                                   
                                 </tr>
                             </tbody>
                         </table>
