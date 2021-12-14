@@ -55,83 +55,83 @@
 
                                     <td><b>@lang('employees.identification_card')</b></td>
                                     <td class="background_color">
-                                        {{$employee->identification_card ?? '' ?? ''}}
+                                        {{$employee->identification_card ?? ''}}
                                     </td>
 
                                     <td><b>@lang('employees.expedition_date')</b></td>
                                     <td class="background_color">
-                                        {{$employee->expedition_date ?? '' ?? ''}}
+                                        {{$employee->expedition_date ?? '' }}
                                     </td>
                                 </tr>
 
                                 <td><b>@lang('employees.date_birth')</b></td>
                                 <td class="background_color">
-                                    {{$employee->date_birth ?? '' ?? ''}}
+                                    {{$employee->date_birth ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.gender_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->gender-> option ?? ''}}
+                                    {{$employee->gender->option ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.rh_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->rh-> option ?? ''}}
+                                    {{$employee->rh->option ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.telephone')</b></td>
                                 <td class="background_color">
-                                    {{$employee->telephone ?? '' ?? ''}}
+                                    {{$employee->telephone ?? ''}}
                                 </td>
-                               
+
                             </tbody>
 
                             <tbody>
                                 <td><b>@lang('employees.email')</b></td>
                                 <td class="background_color">
-                                    {{$employee->email ?? '' ?? ''}}
+                                    {{$employee->email ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.address')</b></td>
                                 <td class="background_color">
-                                    {{$employee->address ?? '' ?? ''}}
+                                    {{$employee->address ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.neighborhood')</b></td>
                                 <td class="background_color">
-                                    {{$employee->neighborhood ?? '' ?? ''}}
+                                    {{$employee->neighborhood ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.municipality_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->municipality-> option ?? ''}}
+                                    {{$employee->municipality->option ?? ''}}
                                 </td>
                             </tbody>
 
                             <tbody>
                                 <td><b>@lang('employees.type_housing_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->type_housing-> option ?? ''}}
+                                    {{$employee->type_housing->option ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.stratum_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->stratum-> option ?? ''}}
+                                    {{$employee->stratum->option ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.marital_status_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->marital_status_id-> option ?? ''}}
+                                    {{$employee->marital_status->option ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.number_children')</b></td>
                                 <td class="background_color">
-                                    {{$employee->number_children ?? '' ?? ''}}
+                                    {{$employee->number_children ?? ''}}
                                 </td>
 
                             </tbody>
-                        
-                        
+
+
                         </table>
                     </div>
 
@@ -155,12 +155,12 @@
 
                                     <td><b>@lang('employees.date_admission')</b></td>
                                     <td class="background_color">
-                                        {{$employee->date_admission ?? '' ?? ''}}
+                                        {{$employee->date_admission ?? ''}}
                                     </td>
 
                                     <td><b>@lang('employees.date_end')</b></td>
                                     <td class="background_color">
-                                        {{$employee->date_end ?? '' ?? ''}}
+                                        {{$employee->date_end ?? ''}}
                                     </td>
                                 </tr>
                             </tbody>
@@ -168,22 +168,22 @@
                             <tbody>
                                 <td><b>@lang('employees.health_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->health-> option ?? ''}}
+                                    {{$employee->health->option ?? ''}}
                                 </td>
-    
+
                                 <td><b>@lang('employees.pension_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->pension-> option ?? ''}}
+                                    {{$employee->pension->option ?? ''}}
                                 </td>
-    
+
                                 <td><b>@lang('employees.arl_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->arl-> option ?? ''}}
+                                    {{$employee->arl->option ?? ''}}
                                 </td>
-                                
+
                                 <td><b>@lang('employees.advan_life_support')</b></td>
                                 <td class="background_color">
-                                    {{$employee->advan_life_support ?? '' ?? ''}}
+                                    {{$employee->advan_life_support ?? ''}}
                                 </td>
 
                             </tbody>
@@ -191,69 +191,88 @@
                             <tbody>
                                 <td><b>@lang('employees.account_type_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->account_type-> option ?? ''}}
+                                    {{$employee->account_type->option ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.bank_id')</b></td>
                                 <td class="background_color">
-                                    {{$employee->bank-> option ?? ''}}
+                                    {{$employee->bank->option ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.account_number')</b></td>
                                 <td class="background_color">
-                                    {{$employee->account_number ?? '' ?? ''}}
+                                    {{$employee->account_number ?? ''}}
                                 </td>
 
                                 <td><b>@lang('employees.certificate_degrees')</b></td>
                                 <td class="background_color">
-                                    {{$employee->certificate_degrees ?? '' ?? ''}}
+                                    {{$employee->certificate_degrees ?? ''}}
                                 </td>
                             </tbody>
-                            
-                        <tbody>
-                            <td><b>@lang('employees.title_verification')</b></td>
-                            <td class="background_color">
-                                {{$employee->title_verification ?? '' ?? ''}}
-                            </td>
 
-                             <td><b>@lang('employees.professional_card')</b></td>
-                            <td class="background_color">
-                                {{$employee->professional_card ?? '' ?? ''}}
-                            </td>
+                            <tbody>
+                                <td><b>@lang('employees.title_verification')</b></td>
+                                <td class="background_color">
+                                    {{$employee->title_verification ?? ''}}
+                                </td>
 
-                               <td><b>@lang('employees.function_manual')</b></td>
-                            <td class="background_color">
-                                {{$employee->function_manual ?? '' ?? ''}}
-                            </td>
+                                <td><b>@lang('employees.professional_card')</b></td>
+                                <td class="background_color">
+                                    {{$employee->professional_card ?? ''}}
+                                </td>
 
-                               <td><b>@lang('employees.resolution_rethus')</b></td>
-                            <td class="background_color">
-                                {{$employee->resolution_rethus ?? '' ?? ''}}
-                            </td>
+                                <td><b>@lang('employees.function_manual')</b></td>
+                                <td class="background_color">
+                                    {{$employee->function_manual ?? ''}}
+                                </td>
 
-                        </tbody>
+                                <td><b>@lang('employees.resolution_rethus')</b></td>
+                                <td class="background_color">
+                                    {{$employee->resolution_rethus ?? ''}}
+                                </td>
 
-                        <tbody>
-                            <td><b>@lang('employees.court_ethics_certific')</b></td>
-                            <td class="background_color">
-                                {{$employee->court_ethics_certific ?? '' ?? ''}}
-                            </td>
 
-                               <td><b>@lang('employees.card_protect_validity')</b></td>
-                            <td class="background_color">
-                                {{$employee->card_protect_validity ?? '' ?? ''}}
-                            </td>
+                            </tbody>
 
-                               <td><b>@lang('employees.occupational_exam')</b></td>
-                            <td class="background_color">
-                                {{$employee->occupational_exam ?? '' ?? ''}}
-                            </td>
+                            <tbody>
+                                <td><b>@lang('employees.court_ethics_certific')</b></td>
+                                <td class="background_color">
+                                    {{$employee->court_ethics_certific ?? ''}}
+                                </td>
 
-                               <td><b>@lang('employees.observation')</b></td>
-                            <td class="background_color">
-                                {{$employee->observation ?? '' ?? ''}}
-                            </td>
-                        </tbody>
+                                <td><b>@lang('employees.card_protect_validity')</b></td>
+                                <td class="background_color">
+                                    {{$employee->card_protect_validity ?? ''}}
+                                </td>
+
+                                <td><b>@lang('employees.occupational_exam')</b></td>
+                                <td class="background_color">
+                                    {{$employee->occupational_exam ?? ''}}
+                                </td>
+
+                                <td><b>@lang('employees.certific_victims_sexual_violence')</b></td>
+                                <td class="background_color">
+                                    {{$employee->certific_victims_sexual_violence ?? ''}}
+                                </td>
+                            </tbody>
+
+                            <tbody>
+                                <td><b>@lang('employees.civil_liability_policy')</b></td>
+                                <td class="background_color">
+                                    {{$employee->civil_liability_policy ?? ''}}
+                                </td>
+
+                                <td><b>@lang('employees.habeas_data')</b></td>
+                                <td class="background_color">
+                                    {{$employee->habeas_data ?? ''}}
+                                </td>
+
+                                <td><b>@lang('employees.observation')</b></td>
+                                <td class="background_color">
+                                    {{$employee->observation ?? ''}}
+                                </td>
+
+                            </tbody>
                         </table>
                     </div>
                 </div>
