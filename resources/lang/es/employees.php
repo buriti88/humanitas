@@ -18,6 +18,7 @@ return [
 
     //Tags
     'title_id' => 'Cargo',
+    'full_name' => 'Nombre completo',
     'name' => 'Nombres',
     'last_name' => 'Apellidos',
     'habeas_data' => 'Habeas data',
