@@ -5,8 +5,8 @@
             <th class="text-center vertical-center">@lang('employees.full_name')</th>
             <th class="text-center vertical-center">@lang('employees.identification_card')</th>
             <th class="text-center vertical-center">@lang('employees.date_birth')</th>
-            <th class="text-center vertical-center">@lang('employees.concept_type_id')</th>
             <th class="text-center vertical-center">@lang('employees.title_id')</th>
+            <th class="text-center vertical-center">@lang('employees.concept_type_id')</th>
             <th class="text-center vertical-center">@lang('employees.date_admission')</th>
             <th class="text-center vertical-center">@lang('employees.date_end')</th>
 

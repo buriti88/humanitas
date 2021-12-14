@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
 use App\Models\Employee;
+use App\PList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -39,6 +40,8 @@ class EmployeeController extends Controller
         return view('employees.index', [
             'search' => $search,
             'employees' => $employees,
+            'titles' => PList::status()->Options('titles')->get(),
+            'concept_types' => PList::status()->Options('concept_types')->get(),
         ]);
     }
 

@@ -26,6 +26,20 @@
     </div>
 
     <div class="col-sm-12 col-md-3">
+        <label>@lang('employees.title_id')</label>
+        <div class="input-group input-group-sm mb-2">
+            <select class="form-control-sm select2" name="q[area_id]">
+                <option value="">@lang('employees.select_title')</option>
+                @foreach($titles as $title)
+                <option value="{{$title->id}}" {{($search['title_id'] ?? '' )==$title->id ? 'selected' : ''}}>
+                    {{ $title->option ?? '' }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-3">
         <label>@lang('users.status')</label>
         <div class="input-group input-group-sm mb-2">
             <select class="form-control-sm select2 w-100" name="q[status]">
