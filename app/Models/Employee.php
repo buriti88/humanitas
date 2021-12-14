@@ -86,6 +86,11 @@ class Employee extends Model
                         $builder->where('name', "like", "%{$value}%");
                     }
                     break;
+                case 'date_birth':
+                    if ($value) {
+                        $builder->where('date_birth', "$value");
+                    }
+                    break;
                 case 'status':
                     if ($value !== null) {
                         $builder->where('status', $value);
