@@ -1,9 +1,14 @@
 <table class="table table-sm table-bordered table-striped">
     <thead>
         <tr>
-            <th class="text-center vertical-center">@lang('base_lang.detail')</th>
+            <th class="text-center vertical-center"></th>
+            <th class="text-center vertical-center">@lang('employees.full_name')</th>
+            <th class="text-center vertical-center">@lang('employees.identification_card')</th>
+            <th class="text-center vertical-center">@lang('employees.date_birth')</th>
+            <th class="text-center vertical-center">@lang('employees.concept_type_id')</th>
             <th class="text-center vertical-center">@lang('employees.title_id')</th>
-            <th class="text-center vertical-center">@lang('employees.name')</th>
+            <th class="text-center vertical-center">@lang('employees.date_admission')</th>
+            <th class="text-center vertical-center">@lang('employees.date_end')</th>
 
             @permission(['edit_employees', 'all_employees'])
             <th class="text-center vertical-center">@lang('base_lang.status')</th>
@@ -23,8 +28,13 @@
                 <i class="fa fa-fw fa-file-alt icon_color"></i>
             </a>
         </td>
-        <td>{!! ($employee->title->option ?? '') !!}</td>
         <td>{!! ($employee->name) . ' ' . ($employee->last_name) !!}</td>
+        <td>{!! ($employee->identification_card ?? '') !!}</td>
+        <td>{!! ($employee->date_birth ?? '') !!}</td>
+        <td>{!! ($employee->title->option ?? '') !!}</td>
+        <td>{!! ($employee->concept_type->option ?? '') !!}</td>
+        <td>{!! ($employee->date_admission ?? '') !!}</td>
+        <td>{!! ($employee->date_end ?? '') !!}</td>
 
         @permission(['edit_employees', 'all_employees'])
         <td class="text-center">
@@ -61,7 +71,7 @@
     </tr>
     @empty
     <tr>
-        <td colspan="10">
+        <td colspan="11">
             <em>@lang('base_lang.no_records')</em>
         </td>
     </tr>
