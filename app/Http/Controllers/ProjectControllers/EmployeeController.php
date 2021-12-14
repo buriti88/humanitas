@@ -20,12 +20,14 @@ class EmployeeController extends Controller
      */
     public function index(Request $request)
     {
-        $search = [];
-
         if ($request->has('q')) {
-            $search = $request->get('q', []);
+            $search = $request->has('q') ? $request->get('q') : [];
         } else {
-            $search = get_last_user_search('employees', []);
+            if ($request->has('page')) {
+                $search = get_last_user_search('employees', []);
+            } else {
+                $search = [];
+            }
         }
 
         set_last_user_search('employees', $search);
@@ -75,7 +77,7 @@ class EmployeeController extends Controller
             Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'crear']));
         }
 
-        return redirect()->route('employees.index');
+        return back();
     }
 
     /**
@@ -132,7 +134,7 @@ class EmployeeController extends Controller
             Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'actualizar']));
         }
 
-        return redirect()->route('employees.index');
+        return redirect("employees/$employee->id");
     }
 
     /**
