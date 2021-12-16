@@ -36,18 +36,6 @@
     </div>
 
     <div class="col-sm-12 col-md-3">
-        <label>@lang('employees.expedition_date')</label>
-        <div class="input-group input-group-sm mb-2">
-            <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-calendar-check"></i></div>
-            </div>
-            <input type="text" class="form-control datepicker" name="q[expedition_date]"
-                value="{{$search['expedition_date'] ?? ''}}" placeholder="@lang('employees.expedition_date')"
-                data-date-format="{{config('app.js_date_format')}}" autocomplete="off">
-        </div>
-    </div>
-
-    <div class="col-sm-12 col-md-3">
         <label>@lang('employees.date_birth')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
@@ -67,6 +55,20 @@
                 @foreach($titles as $title)
                 <option value="{{$title->id}}" {{($search['title_id'] ?? '' )==$title->id ? 'selected' : ''}}>
                     {{ $title->option ?? '' }}
+                </option>
+                @endforeach
+            </select>
+        </div>
+    </div>
+
+    <div class="col-sm-12 col-md-3">
+        <label>@lang('employees.concept_type_id')</label>
+        <div class="input-group input-group-sm mb-2">
+            <select class="form-control-sm select2" name="q[area_id]">
+                <option value="">@lang('employees.select_title')</option>
+                @foreach($concept_types as $concept_type)
+                <option value="{{$title->id}}" {{($search['concept_type_id'] ?? '' )==$concept_type->id ? 'selected' : ''}}>
+                    {{ $concept_type->option ?? '' }}
                 </option>
                 @endforeach
             </select>
