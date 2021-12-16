@@ -86,9 +86,39 @@ class Employee extends Model
                         $builder->where('name', "like", "%{$value}%");
                     }
                     break;
+                case 'last_name':
+                    if ($value) {
+                        $builder->where('last_name', "like", "%{$value}%");
+                    }
+                    break;
+                case 'identification_card':
+                    if ($value) {
+                        $builder->where('identification_card', "like", "%{$value}%");
+                    }
+                    break;
                 case 'date_birth':
                     if ($value) {
                         $builder->where('date_birth', "$value");
+                    }
+                    break;
+                case 'title_id':
+                    if ($value) {
+                        $builder->where('title_id', $value);
+                    }
+                    break;
+                case 'concept_type_id':
+                    if ($value) {
+                        $builder->where('concept_type_id', $value);
+                    }
+                    break;
+                case 'date_admission':
+                    if ($value) {
+                        $builder->where('date_admission', "$value");
+                    }
+                    break;
+                 case 'date_end':
+                    if ($value) {
+                        $builder->where('date_end', "$value");
                     }
                     break;
                 case 'status':
