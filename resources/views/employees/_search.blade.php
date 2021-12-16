@@ -1,29 +1,25 @@
 <form class="form-inline" action="{{ route('employees.index') }}" method="get" role="search">
     <input type="hidden" name="per_page" value="{{$employees->perPage()}}" />
 
-  
-
-       <div class="col-sm-12 col-md-3">
+    <div class="col-sm-12 col-md-3">
         <label>@lang('employees.name')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fa fa-hashtag"></i></div>
             </div>
-            <input type="text" class="form-control" name="q[name]"
-                value="{{$search['name'] ?? ''}}" placeholder="@lang('employees.name')"
-                autocomplete="off">
+            <input type="text" class="form-control" name="q[name]" value="{{$search['name'] ?? ''}}"
+                placeholder="@lang('employees.name')" autocomplete="off">
         </div>
     </div>
 
-       <div class="col-sm-12 col-md-3">
+    <div class="col-sm-12 col-md-3">
         <label>@lang('employees.last_name')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fa fa-hashtag"></i></div>
             </div>
-            <input type="text" class="form-control" name="q[last_name]"
-                value="{{$search['last_name'] ?? ''}}" placeholder="@lang('employees.last_name')"
-                autocomplete="off">
+            <input type="text" class="form-control" name="q[last_name]" value="{{$search['last_name'] ?? ''}}"
+                placeholder="@lang('employees.last_name')" autocomplete="off">
         </div>
     </div>
 
@@ -39,7 +35,7 @@
         </div>
     </div>
 
-   <div class="col-sm-12 col-md-3">
+    <div class="col-sm-12 col-md-3">
         <label>@lang('employees.expedition_date')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
@@ -95,26 +91,11 @@
             <div class="input-group-prepend">
                 <div class="input-group-text"><i class="far fa-calendar-check"></i></div>
             </div>
-            <input type="text" class="form-control datepicker" name="q[date_end]"
-                value="{{$search['date_end'] ?? ''}}" placeholder="@lang('employees.date_end')"
-                data-date-format="{{config('app.js_date_format')}}" autocomplete="off">
+            <input type="text" class="form-control datepicker" name="q[date_end]" value="{{$search['date_end'] ?? ''}}"
+                placeholder="@lang('employees.date_end')" data-date-format="{{config('app.js_date_format')}}"
+                autocomplete="off">
         </div>
     </div>
-
-
-
-
-
- 
-
-    
-
-
-  
-
-     
-
-       
 
     <div class="col-sm-12 col-lg-4 mt-3">
         <button type="submit" class="btn btn-sm btn-primary mb-1">@lang('base_lang.search')</button>
