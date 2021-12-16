@@ -5,7 +5,7 @@
         <label>@lang('employees.name')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
-                <div class="input-group-text"><i class="fa fa-hashtag"></i></div>
+                <div class="input-group-text"><i class="fa fa-user"></i></div>
             </div>
             <input type="text" class="form-control" name="q[name]" value="{{$search['name'] ?? ''}}"
                 placeholder="@lang('employees.name')" autocomplete="off">
@@ -16,7 +16,7 @@
         <label>@lang('employees.last_name')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
-                <div class="input-group-text"><i class="fa fa-hashtag"></i></div>
+                <div class="input-group-text"><i class="fa fa-user"></i></div>
             </div>
             <input type="text" class="form-control" name="q[last_name]" value="{{$search['last_name'] ?? ''}}"
                 placeholder="@lang('employees.last_name')" autocomplete="off">
@@ -27,7 +27,7 @@
         <label>@lang('employees.identification_card')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
-                <div class="input-group-text"><i class="fa fa-hashtag"></i></div>
+                <div class="input-group-text"><i class="fas fa-id-card"></i></div>
             </div>
             <input type="text" class="form-control" name="q[identification_card]"
                 value="{{$search['identification_card'] ?? ''}}" placeholder="@lang('employees.identification_card')"
