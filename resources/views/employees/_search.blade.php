@@ -79,7 +79,7 @@
         <label>@lang('employees.date_admission')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-calendar-check"></i></div>
+                <div class="input-group-text"><i class="fas fa-calendar"></i></div>
             </div>
             <input type="text" class="form-control datepicker" name="q[date_admission]"
                 value="{{$search['date_admission'] ?? ''}}" placeholder="@lang('employees.date_admission')"
@@ -91,7 +91,7 @@
         <label>@lang('employees.date_end')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-calendar-check"></i></div>
+                <div class="input-group-text"><i class="fas fa-calendar-day"></i></div>
             </div>
             <input type="text" class="form-control datepicker" name="q[date_end]" value="{{$search['date_end'] ?? ''}}"
                 placeholder="@lang('employees.date_end')" data-date-format="{{config('app.js_date_format')}}"
