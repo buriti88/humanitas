@@ -2,24 +2,13 @@
     <input type="hidden" name="per_page" value="{{$employees->perPage()}}" />
 
     <div class="col-sm-12 col-md-3">
-        <label>@lang('employees.name')</label>
+        <label>@lang('employees.full_name')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
                 <div class="input-group-text"><i class="fa fa-user"></i></div>
             </div>
-            <input type="text" class="form-control" name="q[name]" value="{{$search['name'] ?? ''}}"
-                placeholder="@lang('employees.name')" autocomplete="off">
-        </div>
-    </div>
-
-    <div class="col-sm-12 col-md-3">
-        <label>@lang('employees.last_name')</label>
-        <div class="input-group input-group-sm mb-2">
-            <div class="input-group-prepend">
-                <div class="input-group-text"><i class="fa fa-user"></i></div>
-            </div>
-            <input type="text" class="form-control" name="q[last_name]" value="{{$search['last_name'] ?? ''}}"
-                placeholder="@lang('employees.last_name')" autocomplete="off">
+            <input type="text" class="form-control" name="q[full_name]" value="{{$search['full_name'] ?? ''}}"
+                placeholder="@lang('employees.full_name')" autocomplete="off">
         </div>
     </div>
 
@@ -50,7 +39,7 @@
     <div class="col-sm-12 col-md-3">
         <label>@lang('employees.title_id')</label>
         <div class="input-group input-group-sm mb-2">
-            <select class="form-control-sm select2" name="q[area_id]">
+            <select class="form-control-sm select2" name="q[title_id]">
                 <option value="">@lang('employees.select_title')</option>
                 @foreach($titles as $title)
                 <option value="{{$title->id}}" {{($search['title_id'] ?? '' )==$title->id ? 'selected' : ''}}>
@@ -64,10 +53,10 @@
     <div class="col-sm-12 col-md-3">
         <label>@lang('employees.concept_type_id')</label>
         <div class="input-group input-group-sm mb-2">
-            <select class="form-control-sm select2" name="q[area_id]">
-                <option value="">@lang('employees.select_title')</option>
+            <select class="form-control-sm select2" name="q[concept_type_id]">
+                <option value="">@lang('employees.select_concept_type')</option>
                 @foreach($concept_types as $concept_type)
-                <option value="{{$title->id}}" {{($search['concept_type_id'] ?? '' )==$concept_type->id ? 'selected' : ''}}>
+                <option value="{{$concept_type->id}}" {{($search['concept_type_id'] ?? '' )==$concept_type->id ? 'selected' : ''}}>
                     {{ $concept_type->option ?? '' }}
                 </option>
                 @endforeach
@@ -99,7 +88,7 @@
         </div>
     </div>
 
-    <div class="col-sm-12 col-lg-4 mt-3">
+    <div class="col-sm-12 col-lg-3 mt-3">
         <button type="submit" class="btn btn-sm btn-primary mb-1">@lang('base_lang.search')</button>
         <a href="{{url('employees?q[]')}}" class="btn btn-sm btn-primary mb-1">
             @lang('base_lang.clear_search')

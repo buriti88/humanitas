@@ -81,14 +81,9 @@ class Employee extends Model
     {
         foreach ($search as $column => $value) {
             switch ($column) {
-                case 'name':
+                case 'full_name':
                     if ($value) {
-                        $builder->where('name', "like", "%{$value}%");
-                    }
-                    break;
-                case 'last_name':
-                    if ($value) {
-                        $builder->where('last_name', "like", "%{$value}%");
+                        $builder->where('name', "like", "%{$value}%")->orWhere('last_name', "like", "%{$value}%");
                     }
                     break;
                 case 'identification_card':
