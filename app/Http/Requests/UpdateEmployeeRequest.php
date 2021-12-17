@@ -65,6 +65,7 @@ class UpdateEmployeeRequest extends CreateEmployeeRequest
             'concept_type_id' => 'sometimes|required',
             'date_end' => 'sometimes|required',
             'observation' => 'sometimes|nullable',
+            'picture' => 'sometimes|required|image|mimes:jpeg,jpg,png|max:2048',
             'status' => 'sometimes|nullable'
         ];
     }

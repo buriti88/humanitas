@@ -63,6 +63,7 @@ class CreateEmployeeRequest extends BasicModelRequest
             'concept_type_id' => 'required',
             'date_end' => 'required',
             'observation' => 'nullable',
+            'picture' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'status' => 'nullable'
         ];
     }

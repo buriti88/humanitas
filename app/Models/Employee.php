@@ -19,6 +19,9 @@ class Employee extends Model
      *
      * @var array
      */
+    protected $file_fields=[
+        'picture'
+    ];
 
     protected $fillable = [
         'title_id',
@@ -61,6 +64,7 @@ class Employee extends Model
         'concept_type_id',
         'date_end',
         'observation',
+        'picture',
         'status',
     ];
 

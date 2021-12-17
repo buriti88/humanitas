@@ -28,7 +28,7 @@
         <label>@lang('employees.date_birth')</label>
         <div class="input-group input-group-sm mb-2">
             <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-calendar-check"></i></div>
+                <div class="input-group-text"><i class="fas fa-birthday-cake"></i></div>
             </div>
             <input type="text" class="form-control datepicker" name="q[date_birth]"
                 value="{{$search['date_birth'] ?? ''}}" placeholder="@lang('employees.date_birth')"

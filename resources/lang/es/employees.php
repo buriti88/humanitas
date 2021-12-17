@@ -57,6 +57,7 @@ return [
     'concept_type_id' => 'Tipo de contrato',
     'date_end' => 'Fecha Final de contrato',
     'observation' => 'Observaciones',
+    'picture' => 'Foto del empleado',
     'status' => 'Estado',
 
     //Select tags

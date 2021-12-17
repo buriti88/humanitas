@@ -861,7 +861,7 @@
                     @endif
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <label>*@lang('employees.habeas_data')</label>
                 <div class="form-group {{ $errors->has('habeas_data') ? 'is-invalid' : '' }} mb-2">
                     <label class="radio-inline">
@@ -886,6 +886,24 @@
                     <strong>{{ $errors->first('habeas_data') }}</strong>
                 </span>
                 @endif
+            </div>
+            <div class="col-sm-4">
+                <label>@lang('employees.picture')</label>
+                <div class="form-group">
+                    <div class="custom-file">
+                        <input id="picture" type="file" lang="es" name="picture"
+                            class="form-control {{ $errors->has('picture') ? 'is-invalid' : '' }} custom-file-input">
+                        <label for="picture" class="custom-file-label">
+                            @lang('base_lang.select_file')
+                        </label>
+                        @if($errors->has('picture'))
+                        <span class="invalid-feedback">
+                            <strong>{{ $errors->first('picture') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    <small class="form-text text-muted">@lang('base_lang.image_rules_jpg')</small>
+                </div>
             </div>
         </div>
 
