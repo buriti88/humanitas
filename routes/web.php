@@ -64,6 +64,7 @@ Route::group(['middleware' => 'auth'], function () {
         // Employee Routes...
         Route::group(['middleware' => [Validation::permissionsRoute('employees')]], function () {
             Route::resource('employees', 'EmployeeController');
+            Route::get('/employees/{employee}/picture', 'EmployeeController@getPicture')->name('employee.picture');
         });
     });
 });

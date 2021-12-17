@@ -43,6 +43,12 @@
                         <table class="table table-sm table-bordered table-active">
                             <tbody>
                                 <tr>
+                                    <td rowspan="4" style="border-right: 1px solid white;">
+                                        @if($employee->picture)
+                                        <img src="{{ route('employee.picture', $employee->id) }}?{{rand(0, 1000)}}"
+                                            alt="@lang('employees.picture')">
+                                        @endif
+                                    </td>
                                     <td><b>@lang('employees.name')</b></td>
                                     <td class="background_color">
                                         {{$employee->name ?? ''}}
@@ -212,7 +218,7 @@
                                     <td class="background_color">
                                         {{$employee->certificate_degrees ? 'Sí' : 'No'}}
                                     </td>
-                                    
+
                                     <td><b>@lang('employees.title_verification')</b></td>
                                     <td class="background_color">
                                         {{$employee->title_verification ? 'Sí' : 'No'}}
@@ -239,7 +245,7 @@
                                     <td class="background_color">
                                         {{$employee->certific_victims_sexual_violence ? 'Sí' : 'No'}}
                                     </td>
-                                    
+
                                     <td><b>@lang('employees.civil_liability_policy')</b></td>
                                     <td class="background_color">
                                         {{$employee->civil_liability_policy ? 'Sí' : 'No'}}
@@ -258,7 +264,7 @@
                                     <td><b>@lang('employees.occupational_exam')</b></td>
                                     <td class="background_color">
                                         {{$employee->occupational_exam ? 'Sí' : 'No'}}
-                                    </td>                                    
+                                    </td>
                                 </tr>
 
                                 <tr>
@@ -266,16 +272,16 @@
                                     <td class="background_color">
                                         {{$employee->habeas_data ? 'Sí' : 'No'}}
                                     </td>
-                                    
+
                                     <td><b>@lang('employees.observation')</b></td>
                                     <td class="background_color" colspan="7">
                                         {{$employee->observation ?? ''}}
                                     </td>
-                                   
+
                                 </tr>
                             </tbody>
                         </table>
-                    </div>     
+                    </div>
                 </div>
             </div>
         </div>

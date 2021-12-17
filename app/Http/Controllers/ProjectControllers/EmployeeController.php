@@ -160,4 +160,18 @@ class EmployeeController extends Controller
 
         return redirect()->route('employees.index');
     }
+
+    public function getPicture(Employee $employee)
+    {
+        if ($employee->picture) {
+            $img = \Image::make(storage_path("app/" . $employee->picture))->resize(100, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+
+            return $img->response($img->extension);
+        } else {
+            abort(404);
+        }
+    }
 }
