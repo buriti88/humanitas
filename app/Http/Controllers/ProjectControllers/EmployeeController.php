@@ -80,7 +80,11 @@ class EmployeeController extends Controller
             Session::flash('error', __('employees.error', ['name' => $employee->name . ' ' . $employee->last_name, 'action' => 'crear']));
         }
 
-        return back();
+        if ($employee) {
+            return redirect("employees/$employee->id");
+        } else {
+            return redirect()->route('employees.index');
+        }
     }
 
     /**
