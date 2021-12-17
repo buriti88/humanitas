@@ -43,12 +43,12 @@
                         <table class="table table-sm table-bordered table-active">
                             <tbody>
                                 <tr>
+                                    @if($employee->picture)
                                     <td rowspan="4" style="border-right: 1px solid white;">
-                                        @if($employee->picture)
                                         <img src="{{ route('employee.picture', $employee->id) }}?{{rand(0, 1000)}}"
                                             alt="@lang('employees.picture')">
-                                        @endif
                                     </td>
+                                    @endif
                                     <td><b>@lang('employees.name')</b></td>
                                     <td class="background_color">
                                         {{$employee->name ?? ''}}

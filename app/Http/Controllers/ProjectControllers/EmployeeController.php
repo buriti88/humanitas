@@ -168,7 +168,7 @@ class EmployeeController extends Controller
     public function getPicture(Employee $employee)
     {
         if ($employee->picture) {
-            $img = \Image::make(storage_path("app/" . $employee->picture))->resize(100, null, function ($constraint) {
+            $img = \Image::make(storage_path("app/" . $employee->picture))->resize(80, null, function ($constraint) {
                 $constraint->aspectRatio();
                 $constraint->upsize();
             });
