@@ -17,6 +17,7 @@ return [
         'maritals_status' => 'Estados Civiles',
         'health' => 'Salud',
         'pension' => 'Fondo de pensiones',
+        'cesantia' => 'Fondo de cesantias',
         'arl' => 'ARL',
         'account_types' => 'Tipos de Cuenta',
         'banks' => 'Bancos',
@@ -88,6 +89,15 @@ return [
             'Protección S.A',
             'Porvernir S.A',
             'Colfondos',
+            'Skandia',
+            'Fondo Nacional del Ahorro'
+        ],
+        'cesantia' => [
+            'Protección S.A',
+            'Porvernir S.A',
+            'Colfondos',
+            'Skandia',
+            'Fondo Nacional del Ahorro'
         ],
         'arl' => [
             'Suramericana',

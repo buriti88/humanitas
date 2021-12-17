@@ -56,6 +56,7 @@ class Employee extends Model
         'occupational_exam',
         'health_id',
         'pension_id',
+        'cesantia',
         'arl_id',
         'account_type_id',
         'account_number',
@@ -142,6 +143,7 @@ class Employee extends Model
             'maritals_status' => PList::status()->Options('maritals_status')->get(),
             'health' => PList::status()->Options('health')->get(),
             'pension' => PList::status()->Options('pension')->get(),
+            'cesantias' => PList::status()->Options('cesantias')->get(),
             'arl' => PList::status()->Options('arl')->get(),
             'account_types' => PList::status()->Options('account_types')->get(),
             'banks' => PList::status()->Options('banks')->get(),
@@ -190,6 +192,11 @@ class Employee extends Model
     public function pension()
     {
         return $this->belongsTo(Plist::class, 'pension_id');
+    }
+
+    public function cesantitas()
+    {
+        return $this->belongsTo(Plist::class, 'cesantias_id');
     }
 
     public function arl()

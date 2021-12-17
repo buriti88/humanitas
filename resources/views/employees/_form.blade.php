@@ -449,6 +449,27 @@
             </div>
 
             <div class="col-sm-3">
+                <label>*@lang('employees.cesantia_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('cesantia_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('cesantia_id') ? 'is-invalid' : '' }} w-100"
+                        name="cesantia_id" id="cesantia_id">
+                        <option value="">@lang('employees.select_cesantia')</option>
+                        @foreach($cesantias as $cesantia)
+                        <option value="{{$p->id}}" {{ $p->id==old('cesantia_id', $employee->cesantia_id ?? '') ?
+                            'selected' : '' }}>
+                            {{ $p->option }}
+                        </option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('cesantia_id'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('cesantia_id') }}</strong>
+                    </span>
+                    @endif
+                </div>
+            </div>
+
+            <div class="col-sm-3">
                 <label>*@lang('employees.arl_id')</label>
                 <div class="input-group input-group-sm mb-2 {{ $errors->has('arl_id') ? 'has-error' : '' }}">
                     <select class="form-control-sm select2 {{ $errors->has('arl_id') ? 'is-invalid' : '' }} w-100"
@@ -549,6 +570,51 @@
                 </div>
             </div>
         </div>
+
+        <div class="col-sm-3">
+            <label>*@lang('employees.name_institute')</label>
+            <div class="input-group input-group-sm mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-user"></i></div>
+                </div>
+                <input id="name_institute" type="text" class="form-control {{ $errors->has('name_institute') ? 'is-invalid' : '' }}"
+                    name_institute="name_institute" value="{{ old('name_institute', $employee->name_institute ?? '') }}"
+                    placeholder="@lang('employees.name_institute')">
+                @if($errors->has('name_institute'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('name_institute') }}</strong>
+                </span>
+                @endif
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <label>*@lang('employees.folio_number')</label>
+            <div class="input-group input-group-sm mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="far fa-money-bill-alt"></i></div>
+                </div>
+                <input id="folio_number" type="text"
+                    class="form-control {{ $errors->has('folio_number') ? 'is-invalid' : '' }}"
+                    name="folio_number" value="{{ old('folio_number', $employee->folio_number ?? '') }}"
+                    placeholder="@lang('employees.folio_number')">
+                @if($errors->has('folio_number'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('folio_number') }}</strong>
+                </span>
+                @endif
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
 
         <div class="row">
             <div class="col-sm-3">

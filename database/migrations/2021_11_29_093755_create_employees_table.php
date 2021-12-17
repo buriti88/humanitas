@@ -47,6 +47,7 @@ class CreateEmployeesTable extends Migration
             $table->unsignedBigInteger('health_id')->nullable();
             $table->unsignedBigInteger('pension_id')->nullable();
             $table->unsignedBigInteger('arl_id')->nullable();
+            $table->unsignedBigInteger('cesantia_id')->nullable();
             $table->string('account_number')->nullable();
             $table->unsignedBigInteger('account_type_id')->nullable();
             $table->unsignedBigInteger('bank_id')->nullable();
@@ -67,6 +68,7 @@ class CreateEmployeesTable extends Migration
             $table->foreign('marital_status_id')->references('id')->on('lists');
             $table->foreign('health_id')->references('id')->on('lists');
             $table->foreign('pension_id')->references('id')->on('lists');
+            $table->foreign('cesantia_id')->references('id')->on('lists');
             $table->foreign('arl_id')->references('id')->on('lists');
             $table->foreign('account_type_id')->references('id')->on('lists');
             $table->foreign('bank_id')->references('id')->on('lists');
