@@ -454,10 +454,10 @@
                     <select class="form-control-sm select2 {{ $errors->has('cesantia_id') ? 'is-invalid' : '' }} w-100"
                         name="cesantia_id" id="cesantia_id">
                         <option value="">@lang('employees.select_cesantia')</option>
-                        @foreach($cesantias as $cesantia)
-                        <option value="{{$p->id}}" {{ $p->id==old('cesantia_id', $employee->cesantia_id ?? '') ?
+                        @foreach($cesantias as $c)
+                        <option value="{{$c->id}}" {{ $c->id==old('cesantia_id', $employee->cesantia_id ?? '') ?
                             'selected' : '' }}>
-                            {{ $p->option }}
+                            {{ $c->option }}
                         </option>
                         @endforeach
                     </select>
