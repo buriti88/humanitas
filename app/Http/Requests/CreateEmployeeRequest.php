@@ -55,6 +55,7 @@ class CreateEmployeeRequest extends BasicModelRequest
             'occupational_exam' => 'required',
             'health_id' => 'required',
             'pension_id' => 'required',
+            'cesantias_id' => 'required',
             'arl_id' => 'required',
             'account_number' => 'required|numeric',
             'account_type_id' => 'required',
@@ -62,6 +63,8 @@ class CreateEmployeeRequest extends BasicModelRequest
             'date_admission' => 'required',
             'concept_type_id' => 'required',
             'date_end' => 'required',
+            'name_institute' => 'required',
+            'folio_number' => 'required',
             'observation' => 'nullable',
             'picture' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'status' => 'nullable'

@@ -57,7 +57,7 @@ class UpdateEmployeeRequest extends CreateEmployeeRequest
             'occupational_exam' => 'sometimes|required',
             'health_id' => 'sometimes|required',
             'pension_id' => 'sometimes|required',
-            'cesantia' => 'sometimes|required',
+            'cesantias_id' => 'sometimes|required',
             'arl_id' => 'sometimes|required',
             'account_number' => 'sometimes|required|numeric',
             'account_type_id' => 'sometimes|required',

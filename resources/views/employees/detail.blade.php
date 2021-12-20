@@ -179,6 +179,11 @@
                                         {{$employee->pension->option ?? ''}}
                                     </td>
 
+                                    <td><b>@lang('employees.cesantias_id')</b></td>
+                                    <td class="background_color">
+                                        {{$employee->pension->option ?? ''}}
+                                    </td>
+
                                     <td><b>@lang('employees.arl_id')</b></td>
                                     <td class="background_color">
                                         {{$employee->arl->option ?? ''}}

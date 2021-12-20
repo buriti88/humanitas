@@ -10,7 +10,7 @@
                 @lang('employees.personal_information')
             </div>
 
-            <div class="col-sm-3">
+                 <div class="col-sm-3">
                 <label>*@lang('employees.name')</label>
                 <div class="input-group input-group-sm mb-2">
                     <div class="input-group-prepend">
@@ -449,21 +449,21 @@
             </div>
 
             <div class="col-sm-3">
-                <label>*@lang('employees.cesantia_id')</label>
-                <div class="input-group input-group-sm mb-2 {{ $errors->has('cesantia_id') ? 'has-error' : '' }}">
-                    <select class="form-control-sm select2 {{ $errors->has('cesantia_id') ? 'is-invalid' : '' }} w-100"
+                <label>*@lang('employees.cesantias_id')</label>
+                <div class="input-group input-group-sm mb-2 {{ $errors->has('cesantias_id') ? 'has-error' : '' }}">
+                    <select class="form-control-sm select2 {{ $errors->has('cesantias_id') ? 'is-invalid' : '' }} w-100"
                         name="cesantia_id" id="cesantia_id">
                         <option value="">@lang('employees.select_cesantia')</option>
-                        @foreach($cesantias as $c)
-                        <option value="{{$c->id}}" {{ $c->id==old('cesantia_id', $employee->cesantia_id ?? '') ?
+                        @foreach($cesantia as $c)
+                        <option value="{{$c->id}}" {{ $c->id==old('cesantias_id', $employee->cesantias_id ?? '') ?
                             'selected' : '' }}>
                             {{ $c->option }}
                         </option>
                         @endforeach
                     </select>
-                    @if($errors->has('cesantia_id'))
+                    @if($errors->has('cesantias_id'))
                     <span class="invalid-feedback">
-                        <strong>{{ $errors->first('cesantia_id') }}</strong>
+                        <strong>{{ $errors->first('cesantias_id') }}</strong>
                     </span>
                     @endif
                 </div>

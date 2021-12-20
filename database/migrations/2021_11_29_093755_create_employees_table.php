@@ -47,13 +47,15 @@ class CreateEmployeesTable extends Migration
             $table->unsignedBigInteger('health_id')->nullable();
             $table->unsignedBigInteger('pension_id')->nullable();
             $table->unsignedBigInteger('arl_id')->nullable();
-            $table->unsignedBigInteger('cesantia_id')->nullable();
+            $table->unsignedBigInteger('cesantias_id')->nullable();
             $table->string('account_number')->nullable();
             $table->unsignedBigInteger('account_type_id')->nullable();
             $table->unsignedBigInteger('bank_id')->nullable();
             $table->string('date_admission')->nullable();
             $table->unsignedBigInteger('concept_type_id')->nullable();
             $table->string('date_end')->nullable();
+            $table->string('name_institute')->nullable();
+            $table->string('folio_number')->nullable();
             $table->text('observation')->nullable();
             $table->string('picture')->nullable();
             $table->boolean('status')->default(1)->nullable();
@@ -68,7 +70,7 @@ class CreateEmployeesTable extends Migration
             $table->foreign('marital_status_id')->references('id')->on('lists');
             $table->foreign('health_id')->references('id')->on('lists');
             $table->foreign('pension_id')->references('id')->on('lists');
-            $table->foreign('cesantia_id')->references('id')->on('lists');
+            $table->foreign('cesantias_id')->references('id')->on('lists');
             $table->foreign('arl_id')->references('id')->on('lists');
             $table->foreign('account_type_id')->references('id')->on('lists');
             $table->foreign('bank_id')->references('id')->on('lists');
