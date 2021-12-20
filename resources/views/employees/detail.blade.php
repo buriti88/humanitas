@@ -189,13 +189,15 @@
                                         {{$employee->arl->option ?? ''}}
                                     </td>
 
+                                   
+                                </tr>
+
+                                <tr>
                                     <td><b>@lang('employees.advan_life_support')</b></td>
                                     <td class="background_color">
                                         {{$employee->advan_life_support ?? ''}}
                                     </td>
-                                </tr>
 
-                                <tr>
                                     <td><b>@lang('employees.account_type_id')</b></td>
                                     <td class="background_color">
                                         {{$employee->account_type->option ?? ''}}
@@ -228,21 +230,22 @@
                                     <td class="background_color">
                                         {{$employee->title_verification ? 'Sí' : 'No'}}
                                     </td>
+                                    <td><b>@lang('employees.name_institute')</b></td>
+                                    <td class="background_color">
+                                        {{$employee->name_institute ?? ''}}
+                                    </td>
+
+                                 <td><b>@lang('employees.folio_number')</b></td>
+                                    <td class="background_color">
+                                        {{$employee->folio_number ?? ''}}
+                                    </td>
 
                                     <td><b>@lang('employees.professional_card')</b></td>
                                     <td class="background_color">
                                         {{$employee->professional_card ? 'Sí' : 'No'}}
                                     </td>
 
-                                    <td><b>@lang('employees.function_manual')</b></td>
-                                    <td class="background_color">
-                                        {{$employee->function_manual ? 'Sí' : 'No'}}
-                                    </td>
-
-                                    <td><b>@lang('employees.resolution_rethus')</b></td>
-                                    <td class="background_color">
-                                        {{$employee->resolution_rethus ? 'Sí' : 'No'}}
-                                    </td>
+                                   
                                 </tr>
 
                                 <tr>
@@ -273,6 +276,17 @@
                                 </tr>
 
                                 <tr>
+
+                                    <td><b>@lang('employees.function_manual')</b></td>
+                                    <td class="background_color">
+                                        {{$employee->function_manual ? 'Sí' : 'No'}}
+                                    </td>
+
+                                    <td><b>@lang('employees.resolution_rethus')</b></td>
+                                    <td class="background_color">
+                                        {{$employee->resolution_rethus ? 'Sí' : 'No'}}
+                                    </td>                                
+
                                     <td><b>@lang('employees.habeas_data')</b></td>
                                     <td class="background_color">
                                         {{$employee->habeas_data ? 'Sí' : 'No'}}
