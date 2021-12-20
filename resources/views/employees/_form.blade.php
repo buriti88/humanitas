@@ -574,7 +574,7 @@
                 <label>*@lang('employees.name_institute')</label>
                 <div class="input-group input-group-sm mb-2">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                        <div class="input-group-text"><i class="fas fa-file"></i></div>
                     </div>
                     <input id="name_institute" type="text" class="form-control {{ $errors->has('name_institute') ? 'is-invalid' : '' }}"
                         name="name_institute" value="{{ old('name_institute', $employee->name_institute ?? '') }}"
@@ -591,7 +591,7 @@
                 <label>*@lang('employees.folio_number')</label>
                 <div class="input-group input-group-sm mb-2">
                     <div class="input-group-prepend">
-                        <div class="input-group-text"><i class="far fa-money-bill-alt"></i></div>
+                        <div class="input-group-text"><i class="fas fa-award"></i></div>
                     </div>
                     <input id="folio_number" type="text"
                         class="form-control {{ $errors->has('folio_number') ? 'is-invalid' : '' }}"
