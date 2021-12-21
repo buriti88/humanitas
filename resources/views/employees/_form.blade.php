@@ -607,8 +607,46 @@
         </div>
     </div>
 
-        <div class="row">
-            <div class="col-sm-3">
+
+
+    <div class="row">
+        <div class="col-sm-12 title-module">
+            @lang('employees.laboral_information')
+        </div>
+
+        <div class="col-sm-2">
+            <label>*@lang('employees.habeas_data')</label>
+            <div class="form-group {{ $errors->has('habeas_data') ? 'is-invalid' : '' }} mb-2">
+                <label class="radio-inline">
+                    <div class="custom-control custom-radio radio-inline">
+                        <input class="custom-control-input" type="radio" id="yes_habeas_data" name="habeas_data"
+                            value="1" {{old('habeas_data', $employee->habeas_data ?? '') ? 'checked' : ''}}>
+                        <label for="yes_habeas_data"
+                            class="custom-control-label mr-2">@lang('base_lang.yes')</label>
+                    </div>
+                </label>
+                <label class="radio-inline">
+                    <div class="custom-control custom-radio radio-inline">
+                        <input class="custom-control-input" type="radio" id="not_habeas_data" name="habeas_data"
+                            value="0" {{old('habeas_data', $employee->habeas_data ?? '') == "0" ? 'checked' :
+                        ''}}>
+                        <label for="not_habeas_data" class="custom-control-label">@lang('base_lang.not')</label>
+                    </div>
+                </label>
+            </div>
+            @if($errors->has('habeas_data'))
+            <span class="invalid-feedback">
+                <strong>{{ $errors->first('habeas_data') }}</strong>
+            </span>
+            @endif
+        </div>
+
+
+    
+
+
+
+            <div class="col-sm-2">
                 <label>*@lang('employees.certificate_degrees')</label>
                 <div class="form-group {{ $errors->has('certificate_degrees') ? 'is-invalid' : '' }} mb-2">
                     <label class="radio-inline">
@@ -639,7 +677,7 @@
                 @endif
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <label>*@lang('employees.title_verification')</label>
                 <div class="form-group {{ $errors->has('title_verification') ? 'is-invalid' : '' }} mb-2">
                     <label class="radio-inline">
@@ -754,7 +792,7 @@
                 @endif
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <label>*@lang('employees.certific_victims_sexual_violence')</label>
                 <div class="form-group {{ $errors->has('certific_victims_sexual_violence') ? 'is-invalid' : '' }} mb-2">
                     <label class="radio-inline">
@@ -787,7 +825,7 @@
                 @endif
             </div>
 
-            <div class="col-sm-3">
+            <div class="col-sm-2">
                 <label>*@lang('employees.civil_liability_policy')</label>
                 <div class="form-group {{ $errors->has('civil_liability_policy') ? 'is-invalid' : '' }} mb-2">
                     <label class="radio-inline">
@@ -904,6 +942,12 @@
             </div>
         </div>
 
+     
+            
+
+
+        </div>
+
         <div class="row">
             <div class="col-sm-6">
                 <label>@lang('employees.observation')</label>
@@ -918,32 +962,13 @@
                     @endif
                 </div>
             </div>
-            <div class="col-sm-2">
-                <label>*@lang('employees.habeas_data')</label>
-                <div class="form-group {{ $errors->has('habeas_data') ? 'is-invalid' : '' }} mb-2">
-                    <label class="radio-inline">
-                        <div class="custom-control custom-radio radio-inline">
-                            <input class="custom-control-input" type="radio" id="yes_habeas_data" name="habeas_data"
-                                value="1" {{old('habeas_data', $employee->habeas_data ?? '') ? 'checked' : ''}}>
-                            <label for="yes_habeas_data"
-                                class="custom-control-label mr-2">@lang('base_lang.yes')</label>
-                        </div>
-                    </label>
-                    <label class="radio-inline">
-                        <div class="custom-control custom-radio radio-inline">
-                            <input class="custom-control-input" type="radio" id="not_habeas_data" name="habeas_data"
-                                value="0" {{old('habeas_data', $employee->habeas_data ?? '') == "0" ? 'checked' :
-                            ''}}>
-                            <label for="not_habeas_data" class="custom-control-label">@lang('base_lang.not')</label>
-                        </div>
-                    </label>
-                </div>
-                @if($errors->has('habeas_data'))
-                <span class="invalid-feedback">
-                    <strong>{{ $errors->first('habeas_data') }}</strong>
-                </span>
-                @endif
-            </div>
+
+
+
+
+
+
+
             <div class="col-sm-4">
                 <label>@lang('employees.picture')</label>
                 <div class="form-group">
